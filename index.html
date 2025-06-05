@@ -19,18 +19,14 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .card-hover:hover { /* This class is used in productos.html, kept for consistency if you mix elements */
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-        .section-title { /* This class is used in other pages, kept for consistency */
-            border-bottom: 2px solid #4F46E5; /* Indigo border */
-            padding-bottom: 0.5rem;
-            display: inline-block;
-        }
         .stat-card {
             background-color: #2d3748; /* Slightly lighter dark for stat cards */
             border-left: 4px solid #4F46E5;
+        }
+        .section-title { /* Added for consistency, might be used in other sections if copied */
+            border-bottom: 2px solid #4F46E5; 
+            padding-bottom: 0.5rem;
+            display: inline-block;
         }
     </style>
 </head>
@@ -42,11 +38,14 @@
             <a href="index.html" class="text-2xl font-bold text-indigo-600">
                 <i class="fas fa-shield-alt mr-2"></i>TuLicencia<span class="text-pink-500">Digital</span>
             </a>
-            <nav class="space-x-4">
-                <a href="index.html" class="text-indigo-600 font-semibold transition duration-300">Inicio</a> <!-- Current page -->
-                <a href="productos.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">Productos</a>
-                <a href="nosotros.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">Nosotros</a>
-                <a href="contacto.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">Contacto</a>
+            <nav class="space-x-2 md:space-x-4 flex items-center">
+                <a href="index.html" class="text-indigo-600 font-semibold transition duration-300 px-2 py-2">Inicio</a> <!-- Current page -->
+                <a href="productos.html" class="text-gray-600 hover:text-indigo-600 transition duration-300 px-2 py-2">Productos</a>
+                <a href="beneficios.html" class="text-gray-600 hover:text-indigo-600 transition duration-300 px-2 py-2">Beneficios</a>
+                <a href="nosotros.html" class="text-gray-600 hover:text-indigo-600 transition duration-300 px-2 py-2">Nosotros</a>
+                <a href="tel:+51943129913" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 text-sm">
+                    <i class="fas fa-phone-alt mr-1 md:mr-2"></i>Llamar Ahora
+                </a>
             </nav>
         </div>
     </header>
@@ -113,7 +112,7 @@
                 </div>
             </div>
             <a href="contacto.html" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 shadow-lg hover:shadow-xl">
-                Contáctanos Hoy Mismo
+                Más Información de Contacto
             </a>
         </div>
     </section>
@@ -137,8 +136,9 @@
                     <ul class="space-y-2">
                         <li><a href="index.html" class="hover:text-indigo-400 transition duration-300">Inicio</a></li>
                         <li><a href="productos.html" class="hover:text-indigo-400 transition duration-300">Productos</a></li>
+                        <li><a href="beneficios.html" class="hover:text-indigo-400 transition duration-300">Beneficios</a></li>
                         <li><a href="nosotros.html" class="hover:text-indigo-400 transition duration-300">Nosotros</a></li>
-                        <li><a href="contacto.html" class="hover:text-indigo-400 transition duration-300">Contacto</a></li>
+                        <li><a href="contacto.html" class="hover:text-indigo-400 transition duration-300">Contacto</a></li> 
                         <li><a href="#" class="hover:text-indigo-400 transition duration-300">Términos y Condiciones</a></li>
                         <li><a href="#" class="hover:text-indigo-400 transition duration-300">Política de Privacidad</a></li>
                     </ul>
@@ -161,10 +161,8 @@
     </footer>
 
     <script>
-        // Smooth scroll for navigation links (useful if any page has internal # links)
         document.querySelectorAll('a[href*="#"]').forEach(anchor => {
-            // Check if the link is internal to the current page
-            if (anchor.pathname === window.location.pathname && anchor.hash) {
+            if (anchor.pathname === window.location.pathname && anchor.hash && anchor.getAttribute('href').startsWith('#')) {
                 anchor.addEventListener('click', function (e) {
                     const targetElement = document.querySelector(this.hash);
                     if (targetElement) {
@@ -176,8 +174,6 @@
                 });
             }
         });
-
-        // Set current year in footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 
