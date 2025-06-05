@@ -3,175 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beneficios - Tu Portal de Licencias Digitales</title>
+    <title>Nuestros Beneficios - TuMundoDigital</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #111827; /* bg-gray-900 */
+            color: #E5E7EB; /* text-gray-200 */
+        }
+        .nav-link {
+            @apply px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300;
+        }
+        .nav-link-active {
+            @apply bg-sky-500 text-white;
+        }
+        .nav-link-hover {
+            @apply hover:bg-sky-700 hover:text-white;
+        }
+        .nav-link-mobile {
+            @apply block px-4 py-3 text-sm text-gray-200 hover:bg-sky-600 transition-colors;
+        }
+        .page-header-bg {
+            background: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.85)), url('https://placehold.co/1920x500/1E293B/9CA3AF?text=Beneficios') center center/cover no-repeat;
+        }
+        .footer {
+            @apply bg-gray-950 text-gray-400 py-12;
+        }
+        .breadcrumb-link {
+            @apply text-sm text-gray-400 hover:text-sky-400 transition-colors;
         }
         .section-title {
-            border-bottom: 2px solid #4F46E5; /* Indigo border */
-            padding-bottom: 0.5rem;
-            display: inline-block;
+            @apply text-3xl md:text-4xl font-bold mb-8 text-sky-400;
         }
         .benefit-card {
-            background-color: white;
-            border-left: 4px solid #EC4899; /* Pink accent */
+            @apply bg-gray-800 p-6 rounded-xl shadow-xl hover:shadow-purple-500/30 transition-shadow duration-300;
         }
-        .benefit-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        .benefit-icon {
+            @apply w-12 h-12 text-purple-400 mb-4;
+        }
+        .benefit-title {
+            @apply text-xl font-semibold text-sky-400 mb-2;
+        }
+        .benefit-text {
+            @apply text-gray-300;
+        }
+        .cta-button {
+            @apply inline-block bg-green-500 hover:bg-green-400 text-white font-bold py-3 px-8 rounded-lg text-lg shadow-lg hover:shadow-green-400/50 transition-all duration-300 transform hover:scale-105;
         }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="antialiased">
 
     <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
+    <header class="bg-gray-900/80 backdrop-blur-md shadow-lg sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-indigo-600">
-                <i class="fas fa-shield-alt mr-2"></i>TuLicencia<span class="text-pink-500">Digital</span>
-            </a>
-            <nav class="space-x-2 md:space-x-4 flex items-center">
-                <a href="index.html" class="text-gray-600 hover:text-indigo-600 transition duration-300 px-2 py-2">Inicio</a>
-                <a href="productos.html" class="text-gray-600 hover:text-indigo-600 transition duration-300 px-2 py-2">Productos</a>
-                <a href="beneficios.html" class="text-indigo-600 font-semibold transition duration-300 px-2 py-2">Beneficios</a> <!-- Current page -->
-                <a href="nosotros.html" class="text-gray-600 hover:text-indigo-600 transition duration-300 px-2 py-2">Nosotros</a>
-                <a href="tel:+51943129913" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 text-sm">
-                    <i class="fas fa-phone-alt mr-1 md:mr-2"></i>Llamar Ahora
-                </a>
+            <a href="index.html" class="text-3xl font-bold text-sky-400">TuMundo<span class="text-purple-400">Digital</span></a>
+            <nav class="hidden md:flex space-x-2">
+                <a href="index.html" class="nav-link nav-link-hover">Inicio</a>
+                <a href="productos.html" class="nav-link nav-link-hover">Productos</a>
+                <a href="beneficios.html" class="nav-link nav-link-active">Beneficios</a>
+                <a href="nosotros.html" class="nav-link nav-link-hover">Nosotros</a>
+                <a href="contacto.html" class="nav-link nav-link-hover">Contacto</a>
             </nav>
+            <button id="mobile-menu-button" class="md:hidden text-gray-200 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-800/95 backdrop-blur-md">
+            <a href="index.html" class="nav-link-mobile border-t border-gray-700">Inicio</a>
+            <a href="productos.html" class="nav-link-mobile border-t border-gray-700">Productos</a>
+            <a href="beneficios.html" class="nav-link-mobile border-t border-gray-700 bg-sky-600 text-white">Beneficios</a>
+            <a href="nosotros.html" class="nav-link-mobile border-t border-gray-700">Nosotros</a>
+            <a href="contacto.html" class="nav-link-mobile border-t border-b border-gray-700">Contacto</a>
         </div>
     </header>
 
+    <!-- Page Header -->
+    <section class="page-header-bg py-20 md:py-28">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">¿Por Qué Elegir TuMundoDigital?</h1>
+            <p class="text-lg text-gray-300">Descubre las ventajas que nos hacen tu mejor opción en el mundo digital.</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    <div class="container mx-auto px-6 py-6">
+        <nav aria-label="Breadcrumb">
+            <ol class="flex items-center space-x-2">
+                <li><a href="index.html" class="breadcrumb-link">Inicio</a></li>
+                <li><span class="text-gray-500">/</span></li>
+                <li><span class="text-gray-200 font-medium">Beneficios</span></li>
+            </ol>
+        </nav>
+    </div>
+
     <!-- Benefits Section -->
-    <main>
-        <section id="beneficios" class="py-16 md:py-24 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4 text-gray-800 section-title">Ventajas de Elegir TuLicencia<span class="text-pink-500">Digital</span></h2>
-                <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Descubre por qué somos tu mejor opción para adquirir licencias digitales de forma segura, rápida y confiable.</p>
+    <main class="container mx-auto px-6 py-8 md:py-16">
+        <div class="text-center mb-12 md:mb-16">
+            <h2 class="section-title">Tu Tranquilidad es Nuestra Prioridad</h2>
+            <p class="text-lg text-gray-300 max-w-3xl mx-auto">En TuMundoDigital, no solo vendemos productos; ofrecemos soluciones completas y un acompañamiento que marca la diferencia. Estos son algunos de los beneficios que disfrutarás con nosotros:</p>
+        </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <div class="benefit-card p-6 rounded-xl shadow-lg transition-all duration-300">
-                        <div class="flex items-center mb-4">
-                            <i class="fas fa-check-circle text-3xl text-green-500 mr-4"></i>
-                            <h3 class="text-xl font-semibold text-gray-800">Licencias 100% Genuinas</h3>
-                        </div>
-                        <p class="text-gray-600 text-sm">Te garantizamos productos originales y verificados directamente de los desarrolladores y distribuidores autorizados.</p>
-                    </div>
-
-                    <div class="benefit-card p-6 rounded-xl shadow-lg transition-all duration-300">
-                        <div class="flex items-center mb-4">
-                            <i class="fas fa-bolt text-3xl text-yellow-500 mr-4"></i>
-                            <h3 class="text-xl font-semibold text-gray-800">Entrega Inmediata</h3>
-                        </div>
-                        <p class="text-gray-600 text-sm">Recibe tus claves de licencia y acceso a los productos de forma digital e instantánea tras confirmar tu compra.</p>
-                    </div>
-
-                    <div class="benefit-card p-6 rounded-xl shadow-lg transition-all duration-300">
-                        <div class="flex items-center mb-4">
-                            <i class="fas fa-dollar-sign text-3xl text-indigo-500 mr-4"></i>
-                            <h3 class="text-xl font-semibold text-gray-800">Precios Competitivos</h3>
-                        </div>
-                        <p class="text-gray-600 text-sm">Ofrecemos precios justos y accesibles para que obtengas el máximo valor por tu inversión en software y entretenimiento.</p>
-                    </div>
-
-                    <div class="benefit-card p-6 rounded-xl shadow-lg transition-all duration-300">
-                        <div class="flex items-center mb-4">
-                            <i class="fas fa-headset text-3xl text-blue-500 mr-4"></i>
-                            <h3 class="text-xl font-semibold text-gray-800">Soporte al Cliente Dedicado</h3>
-                        </div>
-                        <p class="text-gray-600 text-sm">Nuestro equipo está listo para ayudarte con cualquier consulta o inconveniente durante tu proceso de compra e instalación.</p>
-                    </div>
-
-                    <div class="benefit-card p-6 rounded-xl shadow-lg transition-all duration-300">
-                        <div class="flex items-center mb-4">
-                            <i class="fas fa-layer-group text-3xl text-purple-500 mr-4"></i>
-                            <h3 class="text-xl font-semibold text-gray-800">Amplia Variedad</h3>
-                        </div>
-                        <p class="text-gray-600 text-sm">Encuentra una gran selección de software, sistemas operativos, antivirus, suscripciones de streaming y más, todo en un solo lugar.</p>
-                    </div>
-                    
-                    <div class="benefit-card p-6 rounded-xl shadow-lg transition-all duration-300">
-                        <div class="flex items-center mb-4">
-                            <i class="fas fa-shield-alt text-3xl text-red-500 mr-4"></i>
-                            <h3 class="text-xl font-semibold text-gray-800">Compra Segura</h3>
-                        </div>
-                        <p class="text-gray-600 text-sm">Utilizamos plataformas de pago seguras para proteger tu información financiera en cada transacción.</p>
-                    </div>
-
-                </div>
-                 <div class="text-center mt-16">
-                    <a href="productos.html" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 shadow-md hover:shadow-lg">
-                        Explorar Nuestros Productos <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Benefit Card 1: Soporte Postventa Estrella -->
+            <div class="benefit-card">
+                <svg class="benefit-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068M15.75 21H8.25A2.25 2.25 0 016 18.75V5.25A2.25 2.25 0 018.25 3h7.5A2.25 2.25 0 0118 5.25v4.75M6 18.75a3 3 0 002.25 2.879l.008.007M18 12.75h.008v.008H18v-.008z" />
+                </svg>
+                <h3 class="benefit-title">Soporte Postventa Legendario</h3>
+                <p class="benefit-text">
+                    Este es nuestro mayor orgullo. No te dejamos solo después de la compra. Resolvemos cualquier problema o duda con tu servicio o plan contratado durante TODA su vigencia. Tu satisfacción y tranquilidad son nuestro compromiso número uno.
+                </p>
             </div>
+
+            <!-- Benefit Card 2: Productos Genuinos y Confiables -->
+            <div class="benefit-card">
+                <svg class="benefit-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                     <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <h3 class="benefit-title">Productos 100% Originales</h3>
+                <p class="benefit-text">
+                    Somos distribuidores oficiales. Te garantizamos licencias y cuentas auténticas, evitando riesgos de software malicioso, bloqueos inesperados o problemas de legalidad. Invierte seguro con nosotros.
+                </p>
+            </div>
+
+            <!-- Benefit Card 3: Variedad para tu Mundo Digital -->
+            <div class="benefit-card">
+                 <svg class="benefit-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25A2.25 2.25 0 0113.5 8.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+                </svg>
+                <h3 class="benefit-title">Amplia Gama de Soluciones</h3>
+                <p class="benefit-text">
+                    Desde licencias de sistemas operativos y software de productividad hasta tus cuentas de streaming favoritas. Todo lo que necesitas para tu vida digital, en un solo lugar y con la misma calidad de servicio.
+                </p>
+            </div>
+
+            <!-- Benefit Card 4: Precios Competitivos -->
+            <div class="benefit-card">
+                <svg class="benefit-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m00H2.25m5.121 12.153L18.75 5.25M4.5 5.25L9 9.75M15 15l3-3m0 0l-3-3m3 3H9M3 12h18" />
+                </svg>
+                <h3 class="benefit-title">Precios Justos y Claros</h3>
+                <p class="benefit-text">
+                    Ofrecemos precios competitivos para productos digitales originales. Creemos en la transparencia, sin costos ocultos. Obtienes el máximo valor por tu inversión.
+                </p>
+            </div>
+
+            <!-- Benefit Card 5: Asesoramiento Personalizado -->
+            <div class="benefit-card">
+                <svg class="benefit-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 20.25c4.97 0 9-3.694 9-8.25s-4.03-8.25-9-8.25S3 7.006 3 11.25c0 4.556 4.03 8.25 9 8.25zM8.25 10.875a2.625 2.625 0 115.25 0 2.625 2.625 0 01-5.25 0z" />
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6.75h.008v.008H15.75V6.75zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                </svg>
+                <h3 class="benefit-title">Atención y Asesoría Directa</h3>
+                <p class="benefit-text">
+                    ¿No estás seguro de qué necesitas? Te asesoramos de forma personalizada vía WhatsApp para encontrar la solución perfecta que se adapte a tus requerimientos y presupuesto.
+                </p>
+            </div>
+
+            <!-- Benefit Card 6: Proceso Fácil y Rápido -->
+            <div class="benefit-card">
+                <svg class="benefit-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 01-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 006.16-12.12A14.98 14.98 0 009.631 8.41m5.96 5.96a14.926 14.926 0 01-5.841 2.58m5.841-2.58L17.25 12m0 0L21 12m-3.75 0L17.25 9M9 12l3.75-3.75M3 12h6M3 9h6m0 0l3.75-3.75M3 15h6m0 0l3.75 3.75" />
+                </svg>
+                <h3 class="benefit-title">Compra Ágil y Entrega Digital Inmediata</h3>
+                <p class="benefit-text">
+                    Nuestro proceso de compra a través de WhatsApp es directo y eficiente. Una vez confirmado el pago, la entrega de tus productos digitales es prácticamente instantánea. ¡Sin esperas innecesarias!
+                </p>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <section class="mt-16 md:mt-24 text-center">
+            <h3 class="text-2xl md:text-3xl font-semibold text-purple-400 mb-6">
+                ¿Listo para experimentar la diferencia TuMundoDigital?
+            </h3>
+            <p class="text-lg text-gray-300 mb-8 max-w-xl mx-auto">
+                No te conformes con menos. Elige calidad, confianza y el mejor soporte del mercado.
+            </p>
+            <a href="https://wa.me/51943129913?text=Hola%20TuMundoDigital,%20quiero%20saber%20m%C3%A1s%20sobre%20sus%20productos%20y%20beneficios." target="_blank" class="cta-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block mr-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.838 8.838 0 01-4.418-1.223L2.393 18.5l1.42-3.387A6.969 6.969 0 012 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7.897 8.008a.363.363 0 00-.525.016L6.008 9.576a.364.364 0 00-.016.525C6.37 10.794 7.195 12 8.984 12h.016c1.79 0 2.616-1.206 2.992-1.892a.364.364 0 00-.016-.525l-1.364-1.552a.364.364 0 00-.525-.016l-.784.673c-.06.052-.138.027-.175-.043a2.924 2.924 0 01-1.233-1.525c-.037-.07-.012-.148.042-.202l.785-.673z" clip-rule="evenodd" /></svg>
+                Contactar por WhatsApp
+            </a>
+            <a href="productos.html" class="inline-block bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-8 rounded-lg text-lg shadow-lg hover:shadow-sky-500/40 transition-all duration-300 transform hover:scale-105 ml-0 mt-4 sm:mt-0 sm:ml-4">
+                Explorar Productos
+            </a>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-gray-300 py-12">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <h3 class="text-xl font-semibold text-white mb-4">TuLicencia<span class="text-pink-500">Digital</span></h3>
-                    <p class="text-sm">Tu socio confiable para todas tus necesidades de licencias digitales. Productos 100% genuinos y soporte dedicado.</p>
-                    <div class="mt-4 flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-twitter text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-linkedin-in text-xl"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold text-white mb-4">Enlaces Rápidos</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="hover:text-indigo-400 transition duration-300">Inicio</a></li>
-                        <li><a href="productos.html" class="hover:text-indigo-400 transition duration-300">Productos</a></li>
-                        <li><a href="beneficios.html" class="hover:text-indigo-400 transition duration-300">Beneficios</a></li>
-                        <li><a href="nosotros.html" class="hover:text-indigo-400 transition duration-300">Nosotros</a></li>
-                        <li><a href="contacto.html" class="hover:text-indigo-400 transition duration-300">Contacto</a></li> <!-- Este enlace aún existe, pero el botón de acción es más prominente -->
-                        <li><a href="#" class="hover:text-indigo-400 transition duration-300">Términos y Condiciones</a></li>
-                        <li><a href="#" class="hover:text-indigo-400 transition duration-300">Política de Privacidad</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold text-white mb-4">Boletín Informativo</h3>
-                    <p class="text-sm mb-3">Suscríbete para recibir ofertas especiales y novedades.</p>
-                    <form action="#" method="POST" class="flex">
-                        <input type="email" placeholder="tu@email.com" class="w-full px-3 py-2 rounded-l-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
-                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-r-lg font-semibold transition duration-300">
-                            <i class="fas fa-envelope"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 pt-8 text-center text-sm">
-                <p>&copy; <span id="currentYear"></span> TuLicenciaDigital. Todos los derechos reservados. Diseñado con <i class="fas fa-heart text-pink-500"></i>.</p>
+    <footer class="footer mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-2">&copy; <span id="currentYear"></span> TuMundoDigital. Todos los derechos reservados.</p>
+            <p class="text-sm mb-4">Tu Aliado Oficial en el Universo Digital.</p>
+            <div class="space-x-4">
+                <a href="nosotros.html" class="hover:text-sky-400 transition-colors">Nosotros</a> |
+                <a href="productos.html" class="hover:text-sky-400 transition-colors">Productos</a> |
+                <a href="beneficios.html" class="hover:text-sky-400 transition-colors">Beneficios</a> |
+                <a href="contacto.html" class="hover:text-sky-400 transition-colors">Contacto</a>
             </div>
         </div>
     </footer>
 
     <script>
-        document.querySelectorAll('a[href*="#"]').forEach(anchor => {
-            // Check if the link is internal to the current page AND has a hash
-            if (anchor.pathname === window.location.pathname && anchor.hash && anchor.getAttribute('href').startsWith('#')) {
-                anchor.addEventListener('click', function (e) {
-                    const targetElement = document.querySelector(this.hash);
-                    if (targetElement) {
-                        e.preventDefault();
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            }
+        // Script para el menú móvil
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
+
+        // Actualizar año en el footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Placeholder image error handling (though not many images on this page)
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('img'); // If you add images later
+            images.forEach(img => {
+                img.onerror = function() {
+                    this.src = `https://placehold.co/${this.clientWidth || 600}x${this.clientHeight || 400}/1F2937/9CA3AF?text=Imagen+No+Disponible`;
+                    console.warn(`Failed to load image: ${this.alt}. Replaced with placeholder.`);
+                };
+            });
+        });
     </script>
 
 </body>
