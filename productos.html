@@ -11,15 +11,6 @@
         body {
             font-family: 'Inter', sans-serif;
         }
-        /* .hero-bg, .gradient-text, .stat-card are not directly used here but kept for consistency if you copy sections */
-        .hero-bg {
-            background-color: #1a202c;
-        }
-        .gradient-text {
-            background: linear-gradient(to right, #4F46E5, #EC4899);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
         .card-hover:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -28,10 +19,6 @@
             border-bottom: 2px solid #4F46E5; /* Indigo border */
             padding-bottom: 0.5rem;
             display: inline-block;
-        }
-        .stat-card {
-            background-color: #2d3748;
-            border-left: 4px solid #4F46E5;
         }
     </style>
 </head>
@@ -60,16 +47,34 @@
                 <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">Descubre la variedad de licencias que tenemos para ti. Optimiza tu trabajo, estudio y entretenimiento.</p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- 
+                        GUÍA PARA IMÁGENES DE PRODUCTO:
+                        - Carpeta: Crea una carpeta llamada "images" en el mismo directorio que tus archivos HTML.
+                        - Formato: Preferiblemente usa formatos web optimizados como .jpg o .png.
+                        - Nombres de archivo: Usa nombres descriptivos, por ejemplo: "suite-creativa-pro.jpg", "licencia-so-avanzado.png".
+                        - Reemplazo: 
+                            1. Sube tu imagen a la carpeta "images".
+                            2. En la etiqueta <img>, cambia el valor de `src` de la URL de placehold.co a la ruta local.
+                               Ejemplo: src="https://placehold.co/600x400/..." se convierte en src="images/suite-creativa-pro.jpg"
+                            3. Actualiza el atributo `alt` con una descripción real de tu imagen.
+                    -->
+
                     <!-- Product Card Example 1: Software -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transition-all duration-300">
-                        <img src="https://placehold.co/600x400/E2E8F0/4A5568?text=Software+Premium" alt="[Imagen de Software Premium]" class="w-full h-48 object-cover">
+                        <!-- Imagen del Producto: Reemplaza 'src' con la ruta a tu imagen, ej: "images/nombre-de-tu-imagen-software.jpg" -->
+                        <!-- El atributo 'alt' debe describir la imagen para accesibilidad y SEO. -->
+                        <img src="https://placehold.co/600x400/E2E8F0/4A5568?text=Software+Premium" 
+                             alt="[Imagen de Software Premium]" 
+                             class="w-full h-48 object-cover"
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Imagen+no+disponible';">
                         <div class="p-6">
                             <span class="text-sm text-indigo-600 bg-indigo-100 py-1 px-3 rounded-full font-semibold mb-2 inline-block">Software</span>
                             <h3 class="text-xl font-semibold mb-2 text-gray-800">Licencia Suite Creativa Pro</h3>
                             <p class="text-gray-600 text-sm mb-4">Ideal para profesionales del diseño, video y fotografía. Incluye actualizaciones.</p>
                             <div class="flex justify-between items-center">
                                 <span class="text-2xl font-bold text-indigo-600">$99.99</span>
-                                <a href="https://wa.me/51999999999?text=Hola%2C%20estoy%20interesado%20en%20el%20producto%3A%20Licencia%20Suite%20Creativa%20Pro.%20M%C3%A1s%20informaci%C3%B3n%20por%20favor." target="_blank" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 text-sm">
+                                <a href="https://wa.me/51943129913?text=Hola%2C%20estoy%20interesado%20en%20el%20producto%3A%20Licencia%20Suite%20Creativa%20Pro.%20M%C3%A1s%20informaci%C3%B3n%20por%20favor." target="_blank" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 text-sm">
                                     Consultar por WhatsApp <i class="fab fa-whatsapp ml-1"></i>
                                 </a>
                             </div>
@@ -78,14 +83,18 @@
 
                     <!-- Product Card Example 2: OS -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transition-all duration-300">
-                        <img src="https://placehold.co/600x400/D1FAE5/10B981?text=Sistema+Operativo" alt="[Imagen de Sistema Operativo]" class="w-full h-48 object-cover">
+                        <!-- Imagen del Producto: Reemplaza 'src' con "images/nombre-de-tu-imagen-os.jpg" -->
+                        <img src="https://placehold.co/600x400/D1FAE5/10B981?text=Sistema+Operativo" 
+                             alt="[Imagen de Sistema Operativo]" 
+                             class="w-full h-48 object-cover"
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Imagen+no+disponible';">
                         <div class="p-6">
                             <span class="text-sm text-green-600 bg-green-100 py-1 px-3 rounded-full font-semibold mb-2 inline-block">Sistemas Operativos</span>
                             <h3 class="text-xl font-semibold mb-2 text-gray-800">Licencia SO Avanzado</h3>
                             <p class="text-gray-600 text-sm mb-4">La última versión del sistema operativo más confiable y seguro del mercado.</p>
                             <div class="flex justify-between items-center">
                                 <span class="text-2xl font-bold text-green-600">$49.99</span>
-                                <a href="https://wa.me/51999999999?text=Hola%2C%20estoy%20interesado%20en%20el%20producto%3A%20Licencia%20SO%20Avanzado.%20M%C3%A1s%20informaci%C3%B3n%20por%20favor." target="_blank" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 text-sm">
+                                <a href="https://wa.me/51943129913?text=Hola%2C%20estoy%20interesado%20en%20el%20producto%3A%20Licencia%20SO%20Avanzado.%20M%C3%A1s%20informaci%C3%B3n%20por%20favor." target="_blank" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 text-sm">
                                     Consultar por WhatsApp <i class="fab fa-whatsapp ml-1"></i>
                                 </a>
                             </div>
@@ -94,65 +103,81 @@
 
                     <!-- Product Card Example 3: Streaming -->
                     <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transition-all duration-300">
-                        <img src="https://placehold.co/600x400/FEF3C7/F59E0B?text=Streaming+HD" alt="[Imagen de Servicio de Streaming HD]" class="w-full h-48 object-cover">
+                        <!-- Imagen del Producto: Reemplaza 'src' con "images/nombre-de-tu-imagen-streaming.jpg" -->
+                        <img src="https://placehold.co/600x400/FEF3C7/F59E0B?text=Streaming+HD" 
+                             alt="[Imagen de Servicio de Streaming HD]" 
+                             class="w-full h-48 object-cover"
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Imagen+no+disponible';">
                         <div class="p-6">
                             <span class="text-sm text-yellow-600 bg-yellow-100 py-1 px-3 rounded-full font-semibold mb-2 inline-block">Streaming</span>
                             <h3 class="text-xl font-semibold mb-2 text-gray-800">Suscripción Streaming Premium</h3>
                             <p class="text-gray-600 text-sm mb-4">Acceso ilimitado a miles de películas y series en alta definición.</p>
                             <div class="flex justify-between items-center">
                                 <span class="text-2xl font-bold text-yellow-600">$12.99/mes</span>
-                                <a href="https://wa.me/51999999999?text=Hola%2C%20estoy%20interesado%20en%20el%20producto%3A%20Suscripci%C3%B3n%20Streaming%20Premium.%20M%C3%A1s%20informaci%C3%B3n%20por%20favor." target="_blank" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 text-sm">
+                                <a href="https://wa.me/51943129913?text=Hola%2C%20estoy%20interesado%20en%20el%20producto%3A%20Suscripci%C3%B3n%20Streaming%20Premium.%20M%C3%A1s%20informaci%C3%B3n%20por%20favor." target="_blank" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 text-sm">
                                     Consultar por WhatsApp <i class="fab fa-whatsapp ml-1"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <!-- Add more product cards as needed -->
+                    
                      <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transition-all duration-300">
-                        <img src="https://placehold.co/600x400/BFDBFE/3B82F6?text=Software+Oficina" alt="[Imagen de Software de Oficina]" class="w-full h-48 object-cover">
+                        <!-- Imagen del Producto: Reemplaza 'src' con "images/nombre-de-tu-imagen-oficina.jpg" -->
+                        <img src="https://placehold.co/600x400/BFDBFE/3B82F6?text=Software+Oficina" 
+                             alt="[Imagen de Software de Oficina]" 
+                             class="w-full h-48 object-cover"
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Imagen+no+disponible';">
                         <div class="p-6">
                             <span class="text-sm text-blue-600 bg-blue-100 py-1 px-3 rounded-full font-semibold mb-2 inline-block">Software</span>
                             <h3 class="text-xl font-semibold mb-2 text-gray-800">Licencia Paquete Oficina Total</h3>
                             <p class="text-gray-600 text-sm mb-4">Todas las herramientas que necesitas para tu productividad diaria en casa o el trabajo.</p>
                             <div class="flex justify-between items-center">
                                 <span class="text-2xl font-bold text-blue-600">$79.99</span>
-                                <a href="https://wa.me/51999999999?text=Hola%2C%20estoy%20interesado%20en%20el%20producto%3A%20Licencia%20Paquete%20Oficina%20Total.%20M%C3%A1s%20informaci%C3%B3n%20por%20favor." target="_blank" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 text-sm">
+                                <a href="https://wa.me/51943129913?text=Hola%2C%20estoy%20interesado%20en%20el%20producto%3A%20Licencia%20Paquete%20Oficina%20Total.%20M%C3%A1s%20informaci%C3%B3n%20por%20favor." target="_blank" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 text-sm">
                                     Consultar por WhatsApp <i class="fab fa-whatsapp ml-1"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
+                     
                      <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transition-all duration-300">
-                        <img src="https://placehold.co/600x400/FBCFE8/DB2777?text=Antivirus+Seguro" alt="[Imagen de Antivirus]" class="w-full h-48 object-cover">
+                        <!-- Imagen del Producto: Reemplaza 'src' con "images/nombre-de-tu-imagen-antivirus.jpg" -->
+                        <img src="https://placehold.co/600x400/FBCFE8/DB2777?text=Antivirus+Seguro" 
+                             alt="[Imagen de Antivirus]" 
+                             class="w-full h-48 object-cover"
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Imagen+no+disponible';">
                         <div class="p-6">
                             <span class="text-sm text-pink-600 bg-pink-100 py-1 px-3 rounded-full font-semibold mb-2 inline-block">Seguridad</span>
                             <h3 class="text-xl font-semibold mb-2 text-gray-800">Licencia Antivirus Completo</h3>
                             <p class="text-gray-600 text-sm mb-4">Protección total contra virus, malware y amenazas online para todos tus dispositivos.</p>
                             <div class="flex justify-between items-center">
                                 <span class="text-2xl font-bold text-pink-600">$39.99/año</span>
-                                <a href="https://wa.me/51999999999?text=Hola%2C%20estoy%20interesado%20en%20el%20producto%3A%20Licencia%20Antivirus%20Completo.%20M%C3%A1s%20informaci%C3%B3n%20por%20favor." target="_blank" class="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 text-sm">
+                                <a href="https://wa.me/51943129913?text=Hola%2C%20estoy%20interesado%20en%20el%20producto%3A%20Licencia%20Antivirus%20Completo.%20M%C3%A1s%20informaci%C3%B3n%20por%20favor." target="_blank" class="bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 text-sm">
                                     Consultar por WhatsApp <i class="fab fa-whatsapp ml-1"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
+                     
                      <div class="bg-white rounded-xl shadow-lg overflow-hidden card-hover transition-all duration-300">
-                        <img src="https://placehold.co/600x400/A7F3D0/059669?text=Juego+AAA" alt="[Imagen de Videojuego]" class="w-full h-48 object-cover">
+                        <!-- Imagen del Producto: Reemplaza 'src' con "images/nombre-de-tu-imagen-juego.jpg" -->
+                        <img src="https://placehold.co/600x400/A7F3D0/059669?text=Juego+AAA" 
+                             alt="[Imagen de Videojuego]" 
+                             class="w-full h-48 object-cover"
+                             onerror="this.onerror=null;this.src='https://placehold.co/600x400/cccccc/ffffff?text=Imagen+no+disponible';">
                         <div class="p-6">
                             <span class="text-sm text-emerald-600 bg-emerald-100 py-1 px-3 rounded-full font-semibold mb-2 inline-block">Videojuegos</span>
                             <h3 class="text-xl font-semibold mb-2 text-gray-800">Clave Juego Épico Aventuras</h3>
                             <p class="text-gray-600 text-sm mb-4">Sumérgete en mundos increíbles con los últimos lanzamientos para PC o consola.</p>
                             <div class="flex justify-between items-center">
                                 <span class="text-2xl font-bold text-emerald-600">$59.99</span>
-                                <a href="https://wa.me/51999999999?text=Hola%2C%20estoy%20interesado%20en%20el%20producto%3A%20Clave%20Juego%20%C3%89pico%20Aventuras.%20M%C3%A1s%20informaci%C3%B3n%20por%20favor." target="_blank" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 text-sm">
+                                <a href="https://wa.me/51943129913?text=Hola%2C%20estoy%20interesado%20en%20el%20producto%3A%20Clave%20Juego%20%C3%89pico%20Aventuras.%20M%C3%A1s%20informaci%C3%B3n%20por%20favor." target="_blank" class="bg-pink-500 hover:bg-pink-600 text-white font-semibold py-2 px-4 rounded-lg transition duration-300 text-sm">
                                     Consultar por WhatsApp <i class="fab fa-whatsapp ml-1"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- The "Ver Todos los Productos" button might link to a more detailed catalog page in the future -->
-                <!-- For now, it doesn't do anything as this IS the products page. You might remove it or link it to #productos top -->
                  <div class="text-center mt-12">
                     <a href="#productos" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-lg text-lg transition duration-300 shadow-md hover:shadow-lg">
                         Volver Arriba
@@ -206,7 +231,6 @@
 
     <script>
         document.querySelectorAll('a[href*="#"]').forEach(anchor => {
-            // Check if the link is internal to the current page AND has a hash
             if (anchor.pathname === window.location.pathname && anchor.hash && anchor.getAttribute('href').startsWith('#')) {
                 anchor.addEventListener('click', function (e) {
                     const targetElement = document.querySelector(this.hash);
