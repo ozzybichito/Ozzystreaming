@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto - TuMundoDigital</title>
+    <title>Contacto Rápido - TuMundoDigital</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -25,16 +25,16 @@
             @apply block px-4 py-3 text-sm text-gray-200 hover:bg-sky-600 transition-colors;
         }
         .page-header-bg {
-            background: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)), url('https://placehold.co/1920x600/1E293B/9CA3AF?text=Contacto') center center/cover no-repeat;
+            background: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.85)), url('https://placehold.co/1920x500/1E293B/9CA3AF?text=Contacto') center center/cover no-repeat;
         }
         .footer {
-            @apply bg-gray-950 text-gray-400 py-12; /* Even darker footer */
+            @apply bg-gray-950 text-gray-400 py-12;
         }
         .breadcrumb-link {
             @apply text-sm text-gray-400 hover:text-sky-400 transition-colors;
         }
         .section-title {
-            @apply text-3xl md:text-4xl font-bold mb-8 text-sky-400;
+            @apply text-3xl md:text-4xl font-bold mb-6 text-sky-400; /* Reduced margin bottom */
         }
         .form-input {
             @apply w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-gray-200 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-colors;
@@ -43,13 +43,19 @@
             @apply block text-sm font-medium text-gray-300 mb-1;
         }
         .primary-button {
-            @apply bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-8 rounded-lg text-lg shadow-md hover:shadow-sky-500/40 transition-all duration-300 transform hover:scale-105;
+            @apply bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-6 rounded-lg text-base shadow-md hover:shadow-sky-500/40 transition-all duration-300 transform hover:scale-105;
         }
         .whatsapp-button {
-            @apply inline-flex items-center justify-center bg-green-500 hover:bg-green-400 text-white font-bold py-3 px-6 rounded-lg text-base shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-2px];
+            @apply inline-flex items-center justify-center bg-green-500 hover:bg-green-400 text-white font-bold py-3 px-6 rounded-lg text-lg shadow-xl hover:shadow-green-400/50 transition-all duration-300 transform hover:scale-105 hover:translate-y-[-2px]; /* Bigger and more prominent */
         }
         .icon-contact {
-            @apply w-8 h-8 text-purple-400 mr-3;
+            @apply w-7 h-7 text-purple-400 mr-3 flex-shrink-0;
+        }
+        .contact-option {
+            @apply flex items-center bg-gray-800 p-4 rounded-lg hover:bg-gray-700 transition-colors duration-300;
+        }
+        .contact-option-text {
+            @apply text-gray-300 hover:text-sky-300;
         }
     </style>
 </head>
@@ -83,15 +89,15 @@
     </header>
 
     <!-- Page Header -->
-    <section class="page-header-bg py-20 md:py-28">
+    <section class="page-header-bg py-16 md:py-24"> <!-- Reduced padding -->
         <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Ponte en Contacto</h1>
-            <p class="text-lg text-gray-300">Estamos aquí para ayudarte. ¡Hablemos!</p>
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-3">Contáctanos</h1>
+            <p class="text-lg text-gray-300">La forma más rápida de resolver tus dudas.</p>
         </div>
     </section>
 
     <!-- Breadcrumbs -->
-    <div class="container mx-auto px-6 py-6">
+    <div class="container mx-auto px-6 py-5">
         <nav aria-label="Breadcrumb">
             <ol class="flex items-center space-x-2">
                 <li><a href="index.html" class="breadcrumb-link">Inicio</a></li>
@@ -102,97 +108,84 @@
     </div>
 
     <!-- Contact Section -->
-    <main class="container mx-auto px-6 py-8 md:py-16">
-        <div class="grid md:grid-cols-2 gap-12 items-start">
-            
-            <!-- Contact Info -->
-            <div class="bg-gray-800 p-8 rounded-xl shadow-xl">
-                <h2 class="section-title text-left mb-6">Información de Contacto</h2>
-                <p class="text-gray-300 mb-6">
-                    No dudes en contactarnos para cualquier consulta sobre nuestros productos, soporte técnico o si estás interesado en colaborar con nosotros.
+    <main class="container mx-auto px-6 py-8 md:py-12">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-10">
+                <h2 class="section-title">¡Habla con Nosotros Directamente!</h2>
+                <p class="text-gray-300 mb-6 text-lg">
+                    Para consultas, soporte o información, la vía más rápida es WhatsApp. ¡Estamos listos para atenderte!
                 </p>
-                <div class="space-y-6">
-                    <div class="flex items-center">
-                        <svg class="icon-contact" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" /><path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" /></svg>
-                        <div>
-                            <h3 class="font-semibold text-lg text-sky-400">Email</h3>
-                            <a href="mailto:soporte@tumundodigital.com" class="text-gray-300 hover:text-sky-300 transition-colors">soporte@tumundodigital.com</a>
-                            <p class="text-xs text-gray-500">(Próximamente, por ahora usa WhatsApp)</p>
-                        </div>
-                    </div>
-                    <div class="flex items-center">
-                         <svg class="icon-contact" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.279-.086.43l.086.155a7.5 7.5 0 0 0 5.272 5.272l.155.086c.151.078.329.049.43-.086l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clip-rule="evenodd" /></svg>
-                        <div>
-                            <h3 class="font-semibold text-lg text-sky-400">WhatsApp Directo</h3>
-                            <a href="https://wa.me/51943129913?text=Hola%20TuMundoDigital,%20tengo%20una%20consulta." target="_blank" class="text-gray-300 hover:text-sky-300 transition-colors">+51 943 129 913</a>
-                        </div>
-                    </div>
-                    <div class="flex items-center">
-                        <svg class="icon-contact" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 5.159-4.505c1.588-2.055 1.988-4.728 1.988-7.217C21 4.015 17.24 1 12.5 1S4 4.015 4 9.25c0 2.489.399 5.162 1.988 7.217 1.588 2.055 3.27 3.836 5.159 4.505ZM12.5 12a2.75 2.75 0 1 0 0-5.5 2.75 2.75 0 0 0 0 5.5Z" clip-rule="evenodd" /></svg>
-                        <div>
-                            <h3 class="font-semibold text-lg text-sky-400">Ubicación (Referencial)</h3>
-                            <p class="text-gray-300">Lima, Perú (Servicio 100% Digital)</p>
-                        </div>
-                    </div>
-                     <a href="https://wa.me/51943129913?text=Hola%20TuMundoDigital,%20quisiera%20hacer%20una%20consulta%20general." target="_blank" class="whatsapp-button mt-6 w-full">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.838 8.838 0 01-4.418-1.223L2.393 18.5l1.42-3.387A6.969 6.969 0 012 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7.897 8.008a.363.363 0 00-.525.016L6.008 9.576a.364.364 0 00-.016.525C6.37 10.794 7.195 12 8.984 12h.016c1.79 0 2.616-1.206 2.992-1.892a.364.364 0 00-.016-.525l-1.364-1.552a.364.364 0 00-.525-.016l-.784.673c-.06.052-.138.027-.175-.043a2.924 2.924 0 01-1.233-1.525c-.037-.07-.012-.148.042-.202l.785-.673z" clip-rule="evenodd" /></svg>
-                        Enviar Mensaje por WhatsApp
-                    </a>
-                </div>
+                <a href="https://wa.me/51943129913?text=Hola%20TuMundoDigital,%20tengo%20una%20consulta." target="_blank" class="whatsapp-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.838 8.838 0 01-4.418-1.223L2.393 18.5l1.42-3.387A6.969 6.969 0 012 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7.897 8.008a.363.363 0 00-.525.016L6.008 9.576a.364.364 0 00-.016.525C6.37 10.794 7.195 12 8.984 12h.016c1.79 0 2.616-1.206 2.992-1.892a.364.364 0 00-.016-.525l-1.364-1.552a.364.364 0 00-.525-.016l-.784.673c-.06.052-.138.027-.175-.043a2.924 2.924 0 01-1.233-1.525c-.037-.07-.012-.148.042-.202l.785-.673z" clip-rule="evenodd" /></svg>
+                    Chatear por WhatsApp (+51 943 129 913)
+                </a>
             </div>
 
-            <!-- Contact Form (Placeholder) -->
-            <div class="bg-gray-800 p-8 rounded-xl shadow-xl">
-                <h2 class="section-title text-left mb-6">Envíanos un Mensaje</h2>
-                <form action="#" method="POST"> <!-- El action puede ser un script de backend o mailto -->
-                    <div class="space-y-5">
+            <div class="bg-gray-800 p-6 md:p-8 rounded-xl shadow-xl mb-12">
+                <h3 class="text-xl font-semibold text-sky-400 mb-4 text-center">Otras Formas de Contacto</h3>
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <a href="mailto:soporte@tumundodigital.com" class="contact-option">
+                        <svg class="icon-contact" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" /><path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" /></svg>
                         <div>
-                            <label for="name" class="form-label">Nombre Completo</label>
-                            <input type="text" name="name" id="name" autocomplete="name" class="form-input" placeholder="Tu Nombre Completo">
+                            <span class="font-medium contact-option-text">Email</span>
+                            <p class="text-xs text-gray-500">soporte@tumundodigital.com (Respuesta puede tardar)</p>
                         </div>
+                    </a>
+                    <div class="contact-option">
+                        <svg class="icon-contact" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 5.159-4.505c1.588-2.055 1.988-4.728 1.988-7.217C21 4.015 17.24 1 12.5 1S4 4.015 4 9.25c0 2.489.399 5.162 1.988 7.217 1.588 2.055 3.27 3.836 5.159 4.505ZM12.5 12a2.75 2.75 0 1 0 0-5.5 2.75 2.75 0 0 0 0 5.5Z" clip-rule="evenodd" /></svg>
                         <div>
-                            <label for="email" class="form-label">Correo Electrónico</label>
-                            <input type="email" name="email" id="email" autocomplete="email" class="form-input" placeholder="tu@ejemplo.com">
-                        </div>
-                        <div>
-                            <label for="subject" class="form-label">Asunto</label>
-                            <input type="text" name="subject" id="subject" class="form-input" placeholder="Ej: Consulta sobre Windows 11">
-                        </div>
-                        <div>
-                            <label for="message" class="form-label">Mensaje</label>
-                            <textarea id="message" name="message" rows="4" class="form-input" placeholder="Escribe tu mensaje aquí..."></textarea>
-                        </div>
-                        <div>
-                            <button type="submit" class="primary-button w-full">
-                                Enviar Mensaje
-                            </button>
-                            <p class="text-xs text-gray-500 mt-2 text-center">O contáctanos directamente por WhatsApp para una respuesta más rápida.</p>
+                            <span class="font-medium text-gray-300">Operaciones</span>
+                            <p class="text-xs text-gray-500">Lima, Perú (Servicio 100% Digital)</p>
                         </div>
                     </div>
-                </form>
+                </div>
+                 <!-- Optional Form Placeholder - Can be removed if WhatsApp is the sole focus -->
+                <details class="mt-6 group">
+                    <summary class="text-center text-sky-400 hover:text-sky-300 cursor-pointer font-medium group-open:mb-3">
+                        ¿Prefieres un formulario? Haz clic aquí.
+                    </summary>
+                    <form action="#" method="POST" class="border-t border-gray-700 pt-4">
+                        <div class="space-y-4">
+                            <div>
+                                <label for="name" class="form-label sr-only">Nombre Completo</label>
+                                <input type="text" name="name" id="name" autocomplete="name" class="form-input" placeholder="Tu Nombre Completo">
+                            </div>
+                            <div>
+                                <label for="email" class="form-label sr-only">Correo Electrónico</label>
+                                <input type="email" name="email" id="email" autocomplete="email" class="form-input" placeholder="tu@ejemplo.com">
+                            </div>
+                            <div>
+                                <label for="message" class="form-label sr-only">Mensaje</label>
+                                <textarea id="message" name="message" rows="3" class="form-input" placeholder="Escribe tu mensaje aquí..."></textarea>
+                            </div>
+                            <div>
+                                <button type="submit" class="primary-button w-full">
+                                    Enviar Formulario
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </details>
             </div>
         </div>
 
         <!-- Distributor/Partner Section -->
-        <section class="mt-16 md:mt-24 py-12 md:py-16 bg-gray-800 rounded-xl shadow-xl px-6 md:px-10">
+        <section class="py-10 md:py-12 bg-gray-800/70 rounded-xl shadow-xl px-6 md:px-10">
             <div class="text-center">
-                <h2 class="text-3xl font-bold text-purple-400 mb-6">¿Interesado en ser Distribuidor?</h2>
-                <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
-                    En TuMundoDigital, siempre estamos buscando expandir nuestra red de colaboradores. Si te apasiona la tecnología y quieres ofrecer productos digitales de calidad con excelente respaldo, ¡queremos conocerte!
+                <h2 class="text-2xl md:text-3xl font-bold text-purple-400 mb-4">¿Quieres ser Distribuidor?</h2>
+                <p class="text-gray-300 mb-6 max-w-xl mx-auto">
+                    Únete a nuestra red y ofrece productos digitales de calidad. Contáctanos para conocer los beneficios y precios especiales.
                 </p>
-                <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
-                    Ofrecemos precios especiales para distribuidores, material de apoyo y la oportunidad de crecer junto a una marca en expansión.
-                </p>
-                <a href="https://wa.me/51943129913?text=Hola%20TuMundoDigital,%20estoy%20interesado%20en%20conocer%20m%C3%A1s%20sobre%20su%20programa%20de%20distribuidores." target="_blank" class="whatsapp-button text-lg py-3 px-8">
-                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 mr-2"><path d="M12.75 15a.75.75 0 0 0 0-1.5H12A.75.75 0 0 0 12 15h.75Z" /><path fill-rule="evenodd" d="M3 6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6Zm14.25 6a.75.75 0 0 1-.75.75H12v4.5a.75.75 0 0 1-1.5 0V12H6.75a.75.75 0 0 1 0-1.5H10.5V6A.75.75 0 0 1 11.25 6v4.5h3.75a.75.75 0 0 1 .75.75Z" clip-rule="evenodd" /></svg>
-                    Quiero ser Distribuidor
+                <a href="https://wa.me/51943129913?text=Hola%20TuMundoDigital,%20estoy%20interesado%20en%20conocer%20m%C3%A1s%20sobre%20su%20programa%20de%20distribuidores." target="_blank" class="whatsapp-button py-2 px-5 text-base">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5 mr-2"><path d="M12.75 15a.75.75 0 0 0 0-1.5H12A.75.75 0 0 0 12 15h.75Z" /><path fill-rule="evenodd" d="M3 6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6Zm14.25 6a.75.75 0 0 1-.75.75H12v4.5a.75.75 0 0 1-1.5 0V12H6.75a.75.75 0 0 1 0-1.5H10.5V6A.75.75 0 0 1 11.25 6v4.5h3.75a.75.75 0 0 1 .75.75Z" clip-rule="evenodd" /></svg>
+                    Info para Distribuidores
                 </a>
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-16">
+    <footer class="footer mt-12">
         <div class="container mx-auto px-6 text-center">
             <p class="mb-2">&copy; <span id="currentYear"></span> TuMundoDigital. Todos los derechos reservados.</p>
             <p class="text-sm mb-4">Tu Aliado Oficial en el Universo Digital.</p>
@@ -215,7 +208,7 @@
 
         // Actualizar año en el footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
-
+        
         // Placeholder image error handling (though not many images on this page)
         document.addEventListener('DOMContentLoaded', () => {
             const images = document.querySelectorAll('img'); // If you add images later
