@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLUE DENTAL - Nosotros - Conoce Nuestro Equipo</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .icon-placeholder { display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background-color: #DBEAFE; color: #1D4ED8; font-weight: bold; font-size: 1.5rem; margin-bottom: 0.75rem; }
+        @keyframes fadeInDown { 0% { opacity: 0; transform: translateY(-20px); } 100% { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in-down { animation: fadeInDown 0.8s ease-out forwards; }
+        @keyframes fadeInUp { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out 0.3s forwards; opacity:0; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-blue-700">BLUE DENTAL</a>
+            <div class="hidden md:flex space-x-4 items-center">
+                <a href="index.html" class="text-gray-600 hover:text-blue-600">Inicio</a>
+                <a href="nosotros.html" class="text-blue-600 font-semibold border-b-2 border-blue-600">Nosotros</a> <a href="servicios.html" class="text-gray-600 hover:text-blue-600">Servicios</a>
+                <a href="beneficios.html" class="text-gray-600 hover:text-blue-600">Beneficios</a>
+                <a href="contacto.html" class="text-gray-600 hover:text-blue-600">Contacto</a>
+                <a href="tel:921926732" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg transition duration-300 text-sm">Llamar Ahora</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobileMenuButton" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobileMenu" class="md:hidden hidden bg-white shadow-lg">
+            <a href="index.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Inicio</a>
+            <a href="nosotros.html" class="block px-6 py-3 text-blue-600 font-semibold hover:bg-gray-100">Nosotros</a> <a href="servicios.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Servicios</a>
+            <a href="beneficios.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Beneficios</a>
+            <a href="contacto.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Contacto</a>
+            <a href="tel:921926732" class="block px-6 py-3 bg-blue-600 text-white text-center font-semibold rounded-b-lg hover:bg-blue-700 transition duration-300">Llamar Ahora</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section class="py-16 md:py-24 bg-blue-50">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-blue-800 mb-4 animate-fade-in-down">Conoce a BLUE DENTAL</h1>
+                <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto animate-fade-in-up">Dedicados a tu sonrisa, comprometidos con tu salud.</p>
+            </div>
+        </section>
+
+        <section class="py-12 md:py-16">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="animate-fade-in-up" style="animation-delay: 0.2s;">
+                        <h2 class="text-3xl font-semibold text-blue-700 mb-4">Nuestra Historia</h2>
+                        <p class="text-gray-600 mb-4 leading-relaxed">
+                            BLUE DENTAL nació del sueño de crear una clínica odontológica diferente en Chilca, un lugar donde la excelencia profesional y la calidez humana se encuentren para ofrecer a nuestros pacientes una experiencia única y resultados que transformen sonrisas y vidas. Desde nuestros inicios, nos hemos enfocado en la prevención y en tratamientos personalizados.
+                        </p>
+                        <p class="text-gray-600 leading-relaxed">
+                            Con el tiempo, hemos crecido y incorporado tecnología de punta, pero nuestra esencia sigue siendo la misma: el cuidado genuino por cada persona que confía en nosotros.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="https://via.placeholder.com/600x400.png?text=Clínica+BLUE+DENTAL" alt="Nuestra Clínica" class="rounded-lg shadow-xl mx-auto animate-fade-in-up" style="animation-delay: 0.4s;">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-12 md:py-16 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-lg animate-fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="icon-placeholder mx-auto md:mx-0">🎯</div>
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-3">Misión</h3>
+                        <p class="text-gray-600">Ofrecer servicios odontológicos integrales de la más alta calidad, utilizando tecnología avanzada y un enfoque humano, para mejorar la salud bucal y la calidad de vida de nuestros pacientes en Chilca y sus alrededores.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg animate-fade-in-up" style="animation-delay: 0.3s;">
+                        <div class="icon-placeholder mx-auto md:mx-0">👁️</div>
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-3">Visión</h3>
+                        <p class="text-gray-600">Ser la clínica dental líder y de referencia en la región, reconocida por nuestra excelencia profesional, innovación constante, y el compromiso con el bienestar y satisfacción de nuestros pacientes y nuestra comunidad.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-24">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-blue-800 animate-fade-in-down">Nuestro Equipo de Expertos</h2>
+                    <p class="text-gray-600 mt-2 text-lg animate-fade-in-up" style="animation-delay: 0.2s;">Profesionales apasionados por la odontología y dedicados a tu cuidado.</p>
+                </div>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:scale-105 transition-transform duration-300 animate-fade-in-up" style="animation-delay: 0.3s;">
+                        <img src="https://via.placeholder.com/150.png?text=Dr.+Sonrisa" alt="Nombre del Dentista" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-blue-200">
+                        <h4 class="text-xl font-semibold text-blue-700">Dr. Juan Pérez</h4>
+                        <p class="text-blue-500 mb-1">Odontólogo General - COP 12345</p>
+                        <p class="text-gray-600 text-sm">Especialista en restauraciones y prevención. Más de 10 años de experiencia.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:scale-105 transition-transform duration-300 animate-fade-in-up" style="animation-delay: 0.5s;">
+                        <img src="https://via.placeholder.com/150.png?text=Dra.+Muelitas" alt="Nombre del Dentista" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-blue-200">
+                        <h4 class="text-xl font-semibold text-blue-700">Dra. Ana Gómez</h4>
+                        <p class="text-blue-500 mb-1">Ortodoncista - COP 67890</p>
+                        <p class="text-gray-600 text-sm">Experta en tratamientos de ortodoncia para niños y adultos.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg text-center transform hover:scale-105 transition-transform duration-300 animate-fade-in-up" style="animation-delay: 0.7s;">
+                        <img src="https://via.placeholder.com/150.png?text=Asistente+Dental" alt="Asistente Dental" class="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-blue-200">
+                        <h4 class="text-xl font-semibold text-blue-700">Laura Vargas</h4>
+                        <p class="text-blue-500 mb-1">Asistente Dental</p>
+                        <p class="text-gray-600 text-sm">Dedicada a asegurar tu comodidad y una excelente atención.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 py-10 text-sm">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h4 class="font-bold text-white text-lg mb-3">BLUE DENTAL</h4>
+                    <p>Comprometidos con tu salud y bienestar dental. Ofrecemos una atención integral y personalizada para toda la familia.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white text-lg mb-3">Enlaces Rápidos</h4>
+                    <ul>
+                        <li class="mb-1"><a href="index.html" class="hover:text-blue-400">Inicio</a></li>
+                        <li class="mb-1"><a href="nosotros.html" class="hover:text-blue-400">Nosotros</a></li>
+                        <li class="mb-1"><a href="servicios.html" class="hover:text-blue-400">Servicios</a></li>
+                        <li class="mb-1"><a href="beneficios.html" class="hover:text-blue-400">Beneficios</a></li>
+                        <li class="mb-1"><a href="contacto.html" class="hover:text-blue-400">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white text-lg mb-3">Contacto</h4>
+                    <p class="mb-1">📍 Mz Q Lote 5, Chilca, Lima, Perú</p>
+                    <p class="mb-1">📞 <a href="tel:921926732" class="hover:text-blue-400">921 926 732</a></p>
+                    <p class="mb-1">📞 <a href="tel:990304059" class="hover:text-blue-400">990 304 059</a></p>
+                    <p class="mb-1">✉️ <a href="mailto:info@bluedental.pe" class="hover:text-blue-400">info@bluedental.pe</a> (ejemplo)</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6 text-center">
+                <p>&copy; <span id="currentYear"></span> BLUE DENTAL. Todos los derechos reservados.</p>
+                <p class="mt-1">Diseñado con ❤️ para tu sonrisa.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>

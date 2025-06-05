@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLUE DENTAL - Servicios Odontológicos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+        .icon-placeholder { display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background-color: #DBEAFE; color: #1D4ED8; font-weight: bold; font-size: 1.5rem; margin-bottom: 0.75rem; }
+        @keyframes fadeInDown { 0% { opacity: 0; transform: translateY(-20px); } 100% { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in-down { animation: fadeInDown 0.8s ease-out forwards; }
+        @keyframes fadeInUp { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out 0.3s forwards; opacity:0; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-blue-700">BLUE DENTAL</a>
+            <div class="hidden md:flex space-x-4 items-center">
+                <a href="index.html" class="text-gray-600 hover:text-blue-600">Inicio</a>
+                <a href="nosotros.html" class="text-gray-600 hover:text-blue-600">Nosotros</a>
+                <a href="servicios.html" class="text-blue-600 font-semibold border-b-2 border-blue-600">Servicios</a> <a href="beneficios.html" class="text-gray-600 hover:text-blue-600">Beneficios</a>
+                <a href="contacto.html" class="text-gray-600 hover:text-blue-600">Contacto</a>
+                <a href="tel:921926732" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg transition duration-300 text-sm">Llamar Ahora</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobileMenuButton" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobileMenu" class="md:hidden hidden bg-white shadow-lg">
+            <a href="index.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Inicio</a>
+            <a href="nosotros.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Nosotros</a>
+            <a href="servicios.html" class="block px-6 py-3 text-blue-600 font-semibold hover:bg-gray-100">Servicios</a> <a href="beneficios.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Beneficios</a>
+            <a href="contacto.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Contacto</a>
+            <a href="tel:921926732" class="block px-6 py-3 bg-blue-600 text-white text-center font-semibold rounded-b-lg hover:bg-blue-700 transition duration-300">Llamar Ahora</a>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <section class="py-16 md:py-24 bg-blue-50">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-5xl font-bold text-blue-800 mb-4 animate-fade-in-down">Nuestros Servicios Odontológicos</h1>
+                <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto animate-fade-in-up">Soluciones completas para una salud bucal óptima y una sonrisa radiante.</p>
+            </div>
+        </section>
+
+        <section class="py-12 md:py-16">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 animate-fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="icon-placeholder mx-auto">🦷</div>
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-3">Odontología General</h3>
+                        <p class="text-gray-600 mb-4">Desde limpiezas profundas y revisiones periódicas hasta empastes y selladores para mantener tu boca sana y prevenir problemas futuros.</p>
+                        <a href="contacto.html" class="text-blue-600 font-semibold hover:underline">Agendar Consulta &rarr;</a>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 animate-fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="icon-placeholder mx-auto">😁</div>
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-3">Ortodoncia</h3>
+                        <p class="text-gray-600 mb-4">Corrige la posición de tus dientes y mejora tu mordida con tratamientos de ortodoncia modernos, incluyendo brackets tradicionales y alineadores invisibles.</p>
+                        <a href="contacto.html" class="text-blue-600 font-semibold hover:underline">Evaluación Gratuita &rarr;</a>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 animate-fade-in-up" style="animation-delay: 0.3s;">
+                        <div class="icon-placeholder mx-auto">🔩</div>
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-3">Implantes Dentales</h3>
+                        <p class="text-gray-600 mb-4">Recupera la funcionalidad y estética de tu sonrisa con implantes dentales de titanio, la solución más duradera para reemplazar dientes perdidos.</p>
+                        <a href="contacto.html" class="text-blue-600 font-semibold hover:underline">Más Información &rarr;</a>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 animate-fade-in-up" style="animation-delay: 0.4s;">
+                        <div class="icon-placeholder mx-auto">✨</div>
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-3">Estética Dental</h3>
+                        <p class="text-gray-600 mb-4">Transforma tu sonrisa con nuestros tratamientos de estética dental: blanqueamiento, carillas de porcelana, contorneado dental y más.</p>
+                        <a href="contacto.html" class="text-blue-600 font-semibold hover:underline">Diseña tu Sonrisa &rarr;</a>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 animate-fade-in-up" style="animation-delay: 0.5s;">
+                        <div class="icon-placeholder mx-auto">👶</div>
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-3">Odontopediatría</h3>
+                        <p class="text-gray-600 mb-4">Cuidado dental especializado para los más pequeños, creando hábitos saludables desde la infancia en un ambiente amigable y divertido.</p>
+                        <a href="contacto.html" class="text-blue-600 font-semibold hover:underline">Primera Visita Infantil &rarr;</a>
+                    </div>
+                    <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 animate-fade-in-up" style="animation-delay: 0.6s;">
+                        <div class="icon-placeholder mx-auto">❤️‍🩹</div>
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-3">Endodoncia</h3>
+                        <p class="text-gray-600 mb-4">Tratamiento de conducto para salvar dientes dañados o infectados, aliviando el dolor y preservando tu diente natural.</p>
+                        <a href="contacto.html" class="text-blue-600 font-semibold hover:underline">Alivio del Dolor &rarr;</a>
+                    </div>
+                     <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 animate-fade-in-up" style="animation-delay: 0.7s;">
+                        <div class="icon-placeholder mx-auto">🩹</div>
+                        <h3 class="text-2xl font-semibold text-blue-700 mb-3">Periodoncia</h3>
+                        <p class="text-gray-600 mb-4">Tratamiento de enfermedades de las encías, como gingivitis y periodontitis, para mantener tus encías sanas y proteger tus dientes.</p>
+                        <a href="contacto.html" class="text-blue-600 font-semibold hover:underline">Salud Gingival &rarr;</a>
+                    </div>
+                     <div class="bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 animate-fade-in-up" style="animation-delay: 0.8s;">
+                        <div class="icon-placeholder mx-auto"> Röntgen</div> <h3 class="text-2xl font-semibold text-blue-700 mb-3">Radiología Digital</h3>
+                        <p class="text-gray-600 mb-4">Diagnósticos precisos con mínima exposición gracias a nuestra tecnología de radiografía digital avanzada.</p>
+                        <a href="contacto.html" class="text-blue-600 font-semibold hover:underline">Diagnóstico Preciso &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-blue-600 text-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl font-bold mb-4 animate-fade-in-down">¿Tienes Dudas Sobre Algún Tratamiento?</h2>
+                <p class="text-lg mb-8 max-w-xl mx-auto animate-fade-in-up">Nuestro equipo está listo para asesorarte y ayudarte a elegir la mejor opción para tu salud bucal.</p>
+                <a href="contacto.html" class="bg-white text-blue-700 font-bold py-3 px-10 rounded-lg text-lg hover:bg-blue-50 transition duration-300 transform hover:scale-105 inline-block">Contáctanos Hoy Mismo</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-gray-300 py-10 text-sm">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <div>
+                    <h4 class="font-bold text-white text-lg mb-3">BLUE DENTAL</h4>
+                    <p>Comprometidos con tu salud y bienestar dental. Ofrecemos una atención integral y personalizada para toda la familia.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white text-lg mb-3">Enlaces Rápidos</h4>
+                    <ul>
+                        <li class="mb-1"><a href="index.html" class="hover:text-blue-400">Inicio</a></li>
+                        <li class="mb-1"><a href="nosotros.html" class="hover:text-blue-400">Nosotros</a></li>
+                        <li class="mb-1"><a href="servicios.html" class="hover:text-blue-400">Servicios</a></li>
+                        <li class="mb-1"><a href="beneficios.html" class="hover:text-blue-400">Beneficios</a></li>
+                        <li class="mb-1"><a href="contacto.html" class="hover:text-blue-400">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white text-lg mb-3">Contacto</h4>
+                    <p class="mb-1">📍 Mz Q Lote 5, Chilca, Lima, Perú</p>
+                    <p class="mb-1">📞 <a href="tel:921926732" class="hover:text-blue-400">921 926 732</a></p>
+                    <p class="mb-1">📞 <a href="tel:990304059" class="hover:text-blue-400">990 304 059</a></p>
+                    <p class="mb-1">✉️ <a href="mailto:info@bluedental.pe" class="hover:text-blue-400">info@bluedental.pe</a> (ejemplo)</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6 text-center">
+                <p>&copy; <span id="currentYear"></span> BLUE DENTAL. Todos los derechos reservados.</p>
+                <p class="mt-1">Diseñado con ❤️ para tu sonrisa.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
