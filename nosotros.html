@@ -3,128 +3,233 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Nosotros - Tu Portal de Licencias Digitales</title>
+    <title>Sobre Nosotros - TuMundoDigital</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #111827; /* bg-gray-900 */
+            color: #E5E7EB; /* text-gray-200 */
+        }
+        .nav-link {
+            @apply px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300;
+        }
+        .nav-link-active {
+            @apply bg-sky-500 text-white;
+        }
+        .nav-link-hover {
+            @apply hover:bg-sky-700 hover:text-white;
+        }
+        .nav-link-mobile {
+            @apply block px-4 py-3 text-sm text-gray-200 hover:bg-sky-600 transition-colors;
+        }
+        .page-header-bg {
+            background: linear-gradient(rgba(17, 24, 39, 0.85), rgba(17, 24, 39, 0.85)), url('https://placehold.co/1920x500/1E293B/9CA3AF?text=Nosotros') center center/cover no-repeat;
+        }
+        .footer {
+            @apply bg-gray-950 text-gray-400 py-12;
+        }
+        .breadcrumb-link {
+            @apply text-sm text-gray-400 hover:text-sky-400 transition-colors;
         }
         .section-title {
-            border-bottom: 2px solid #4F46E5; /* Indigo border */
-            padding-bottom: 0.5rem;
-            display: inline-block;
+            @apply text-3xl md:text-4xl font-bold mb-8 text-sky-400;
         }
-        /* Other styles like .hero-bg, .card-hover etc. are kept for consistency if you mix elements later */
+        .content-text {
+            @apply text-lg text-gray-300 leading-relaxed mb-6;
+        }
+        .highlight-text {
+            @apply text-purple-400 font-semibold;
+        }
+        .team-card {
+            @apply bg-gray-800 p-6 rounded-xl shadow-xl text-center hover:shadow-sky-500/30 transition-shadow duration-300;
+        }
+        .team-avatar {
+            @apply w-32 h-32 rounded-full mx-auto mb-4 object-cover border-4 border-sky-500;
+        }
+        .team-name {
+            @apply text-xl font-semibold text-sky-400 mb-1;
+        }
+        .team-role {
+            @apply text-purple-400 text-sm;
+        }
     </style>
 </head>
-<body class="bg-gray-100 text-gray-800">
+<body class="antialiased">
 
     <!-- Header -->
-    <header class="bg-white shadow-md sticky top-0 z-50">
+    <header class="bg-gray-900/80 backdrop-blur-md shadow-lg sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-2xl font-bold text-indigo-600">
-                <i class="fas fa-shield-alt mr-2"></i>TuLicencia<span class="text-pink-500">Digital</span>
-            </a>
-            <nav class="space-x-4">
-                <a href="index.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">Inicio</a>
-                <a href="productos.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">Productos</a>
-                <a href="nosotros.html" class="text-indigo-600 font-semibold transition duration-300">Nosotros</a> <!-- Current page -->
-                <a href="contacto.html" class="text-gray-600 hover:text-indigo-600 transition duration-300">Contacto</a>
+            <a href="index.html" class="text-3xl font-bold text-sky-400">TuMundo<span class="text-purple-400">Digital</span></a>
+            <nav class="hidden md:flex space-x-2">
+                <a href="index.html" class="nav-link nav-link-hover">Inicio</a>
+                <a href="productos.html" class="nav-link nav-link-hover">Productos</a>
+                <a href="beneficios.html" class="nav-link nav-link-hover">Beneficios</a>
+                <a href="nosotros.html" class="nav-link nav-link-active">Nosotros</a>
+                <a href="contacto.html" class="nav-link nav-link-hover">Contacto</a>
             </nav>
+            <button id="mobile-menu-button" class="md:hidden text-gray-200 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-800/95 backdrop-blur-md">
+            <a href="index.html" class="nav-link-mobile border-t border-gray-700">Inicio</a>
+            <a href="productos.html" class="nav-link-mobile border-t border-gray-700">Productos</a>
+            <a href="beneficios.html" class="nav-link-mobile border-t border-gray-700">Beneficios</a>
+            <a href="nosotros.html" class="nav-link-mobile border-t border-gray-700 bg-sky-600 text-white">Nosotros</a>
+            <a href="contacto.html" class="nav-link-mobile border-t border-b border-gray-700">Contacto</a>
         </div>
     </header>
 
-    <!-- About Us Section -->
-    <main>
-        <section id="nosotros" class="py-16 md:py-24 bg-white">
-            <div class="container mx-auto px-6">
-                <div class="flex flex-col md:flex-row items-center">
-                    <div class="md:w-1/2 mb-8 md:mb-0 md:pr-12">
-                        <img src="https://placehold.co/600x450/A78BFA/4C1D95?text=Equipo+TuLicenciaDigital" alt="[Imagen del equipo de TuLicenciaDigital]" class="rounded-xl shadow-2xl w-full">
-                    </div>
-                    <div class="md:w-1/2">
-                        <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6 section-title">Sobre TuLicencia<span class="text-pink-500">Digital</span></h2>
-                        <p class="text-gray-600 mb-4 text-lg">
-                            Somos <strong class="text-indigo-600">distribuidores oficiales autorizados</strong>, comprometidos con ofrecerte acceso legal y seguro a una amplia gama de licencias digitales. Nuestra misión es simplificar la adquisición de software, sistemas operativos y entretenimiento, brindándote la tranquilidad de obtener productos genuinos.
-                        </p>
-                        <p class="text-gray-600 mb-6 text-lg">
-                            Con años de experiencia en el sector, entendemos tus necesidades y nos esforzamos por ofrecer un servicio al cliente excepcional, precios competitivos y entrega inmediata. Creemos en la transparencia y en construir relaciones de confianza con cada uno de nuestros clientes.
-                        </p>
-                        <ul class="space-y-3 text-gray-700">
-                            <li class="flex items-center"><i class="fas fa-medal text-indigo-500 mr-3 text-xl"></i> Distribuidor Oficial Certificado</li>
-                            <li class="flex items-center"><i class="fas fa-lock text-indigo-500 mr-3 text-xl"></i> Transacciones 100% Seguras</li>
-                            <li class="flex items-center"><i class="fas fa-sync-alt text-indigo-500 mr-3 text-xl"></i> Actualizaciones Constantes de Catálogo</li>
-                            <li class="flex items-center"><i class="fas fa-thumbs-up text-indigo-500 mr-3 text-xl"></i> Satisfacción Garantizada</li>
-                            <li class="flex items-center"><i class="fas fa-headset text-indigo-500 mr-3 text-xl"></i> Soporte Técnico Especializado</li>
-                        </ul>
-                        <a href="contacto.html" class="mt-8 inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 shadow-md">
-                            Habla con Nosotros
-                        </a>
-                    </div>
+    <!-- Page Header -->
+    <section class="page-header-bg py-20 md:py-28">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Conoce a TuMundoDigital</h1>
+            <p class="text-lg text-gray-300">Apasionados por la tecnología, comprometidos contigo.</p>
+        </div>
+    </section>
+
+    <!-- Breadcrumbs -->
+    <div class="container mx-auto px-6 py-6">
+        <nav aria-label="Breadcrumb">
+            <ol class="flex items-center space-x-2">
+                <li><a href="index.html" class="breadcrumb-link">Inicio</a></li>
+                <li><span class="text-gray-500">/</span></li>
+                <li><span class="text-gray-200 font-medium">Nosotros</span></li>
+            </ol>
+        </nav>
+    </div>
+
+    <!-- About Us Content Section -->
+    <main class="container mx-auto px-6 py-8 md:py-16">
+        
+        <section class="mb-12 md:mb-16">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="section-title text-center">Nuestra Historia: Pasión por lo Digital</h2>
+                <img src="https://placehold.co/800x400/1F2937/8B5CF6?text=Equipo+TuMundoDigital" alt="[Imagen del equipo o concepto de TuMundoDigital]" class="rounded-xl shadow-lg mb-8 mx-auto">
+                <p class="content-text">
+                    TuMundoDigital nació de una <span class="highlight-text">pasión genuina por la tecnología</span> y el deseo de facilitar el acceso a herramientas digitales esenciales para todos. Como usuarios y entusiastas, entendemos la importancia de contar con software original, sistemas operativos estables y entretenimiento de calidad sin complicaciones.
+                </p>
+                <p class="content-text">
+                    Comenzamos como un pequeño emprendimiento, identificando la necesidad en nuestra comunidad de un proveedor confiable de licencias y cuentas digitales. Lo que nos impulsó fue la idea de ofrecer no solo productos, sino una <span class="highlight-text">experiencia de compra segura, ágil y, sobre todo, con un respaldo real</span>. Muchos venden y desaparecen; nosotros decidimos quedarnos y acompañar a nuestros clientes en cada paso.
+                </p>
+                <p class="content-text">
+                    Hoy, somos distribuidores oficiales y hemos crecido gracias a la confianza de cientos de clientes que valoran nuestra transparencia, la autenticidad de nuestros productos y, especialmente, nuestro <span class="highlight-text">compromiso inquebrantable con el soporte postventa</span>. Cada licencia vendida, cada cuenta activada, es una oportunidad para demostrar que TuMundoDigital es más que una tienda: somos tu aliado en el universo digital.
+                </p>
+            </div>
+        </section>
+
+        <section class="mb-12 md:mb-16 bg-gray-800 py-12 px-6 rounded-xl shadow-xl">
+            <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <h3 class="text-2xl md:text-3xl font-bold text-sky-400 mb-6">Misión y Visión</h3>
+                    <p class="content-text"><strong class="text-purple-400">Nuestra Misión:</strong> Empoderar a individuos y empresas proporcionando acceso fácil, seguro y confiable a productos digitales esenciales, respaldado por un soporte técnico excepcional que garantice la satisfacción y tranquilidad de nuestros clientes.</p>
+                    <p class="content-text"><strong class="text-purple-400">Nuestra Visión:</strong> Ser la plataforma líder y de mayor confianza en Latinoamérica para la adquisición de licencias de software y cuentas de servicios digitales, reconocidos por nuestra integridad, innovación y un incomparable servicio al cliente.</p>
+                </div>
+                <img src="https://placehold.co/600x400/38BDF8/0F172A?text=Mision+Vision+Valores" alt="[Imagen conceptual de Misión y Visión]" class="rounded-lg shadow-md mx-auto">
+            </div>
+        </section>
+
+        <section class="mb-12 md:mb-16">
+            <h2 class="section-title text-center">Nuestros Valores Fundamentales</h2>
+            <div class="max-w-5xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:scale-105 transition-transform">
+                    <h4 class="text-xl font-semibold text-purple-400 mb-2">Integridad</h4>
+                    <p class="text-gray-400">Actuamos con honestidad y transparencia en todas nuestras interacciones. Ofrecemos solo productos originales y genuinos.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:scale-105 transition-transform">
+                    <h4 class="text-xl font-semibold text-purple-400 mb-2">Compromiso con el Cliente</h4>
+                    <p class="text-gray-400">Tu satisfacción es nuestra máxima prioridad. Nos esforzamos por superar tus expectativas con cada compra y consulta.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:scale-105 transition-transform">
+                    <h4 class="text-xl font-semibold text-purple-400 mb-2">Soporte Excepcional</h4>
+                    <p class="text-gray-400">No solo vendemos, acompañamos. Nuestro soporte postventa es el pilar de nuestro servicio y tu tranquilidad.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:scale-105 transition-transform">
+                    <h4 class="text-xl font-semibold text-purple-400 mb-2">Confianza</h4>
+                    <p class="text-gray-400">Construimos relaciones a largo plazo basadas en la confianza mutua y la fiabilidad de nuestros servicios.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:scale-105 transition-transform">
+                    <h4 class="text-xl font-semibold text-purple-400 mb-2">Innovación</h4>
+                    <p class="text-gray-400">Buscamos constantemente mejorar nuestros procesos y ampliar nuestra oferta para adaptarnos a tus necesidades digitales.</p>
+                </div>
+                <div class="bg-gray-800 p-6 rounded-lg shadow-lg hover:scale-105 transition-transform">
+                    <h4 class="text-xl font-semibold text-purple-400 mb-2">Pasión por la Tecnología</h4>
+                    <p class="text-gray-400">Nos encanta lo que hacemos y compartimos ese entusiasmo contigo, ofreciéndote lo mejor del mundo digital.</p>
                 </div>
             </div>
         </section>
+        
+        <!-- Opcional: Sección del Equipo (si aplica) -->
+        <!--
+        <section>
+            <h2 class="section-title text-center">Conoce al Equipo</h2>
+            <div class="max-w-4xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="team-card">
+                    <img src="https://placehold.co/200x200/8B5CF6/FFFFFF?text=Frank+L." alt="[Foto de Frank Lumen-Arce]" class="team-avatar">
+                    <h4 class="team-name">Frank Lumen-Arce</h4>
+                    <p class="team-role">Fundador y CEO</p>
+                    <p class="text-gray-400 text-sm mt-2">"Apasionado por hacer la tecnología accesible y confiable para todos."</p>
+                </div>
+                <! -- Añade más miembros del equipo si es necesario -- >
+            </div>
+        </section>
+        -->
+
+        <!-- Call to Action -->
+        <section class="mt-16 md:mt-24 text-center bg-gray-800 py-12 px-6 rounded-xl shadow-xl">
+            <h3 class="text-2xl md:text-3xl font-semibold text-sky-400 mb-6">
+                Únete a la Comunidad TuMundoDigital
+            </h3>
+            <p class="text-lg text-gray-300 mb-8 max-w-xl mx-auto">
+                Estamos emocionados de ser parte de tu viaje digital. Si tienes alguna pregunta o quieres saber más, ¡no dudes en contactarnos!
+            </p>
+            <a href="contacto.html" class="inline-block bg-purple-500 hover:bg-purple-600 text-white font-bold py-3 px-8 rounded-lg text-lg shadow-lg hover:shadow-purple-500/40 transition-all duration-300 transform hover:scale-105">
+                Contacta con Nosotros
+            </a>
+        </section>
+
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-800 text-gray-300 py-12">
-        <div class="container mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <h3 class="text-xl font-semibold text-white mb-4">TuLicencia<span class="text-pink-500">Digital</span></h3>
-                    <p class="text-sm">Tu socio confiable para todas tus necesidades de licencias digitales. Productos 100% genuinos y soporte dedicado.</p>
-                    <div class="mt-4 flex space-x-4">
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-twitter text-xl"></i></a>
-                        <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-linkedin-in text-xl"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold text-white mb-4">Enlaces Rápidos</h3>
-                    <ul class="space-y-2">
-                        <li><a href="index.html" class="hover:text-indigo-400 transition duration-300">Inicio</a></li>
-                        <li><a href="productos.html" class="hover:text-indigo-400 transition duration-300">Productos</a></li>
-                        <li><a href="nosotros.html" class="hover:text-indigo-400 transition duration-300">Nosotros</a></li>
-                        <li><a href="contacto.html" class="hover:text-indigo-400 transition duration-300">Contacto</a></li>
-                        <li><a href="#" class="hover:text-indigo-400 transition duration-300">Términos y Condiciones</a></li>
-                        <li><a href="#" class="hover:text-indigo-400 transition duration-300">Política de Privacidad</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-xl font-semibold text-white mb-4">Boletín Informativo</h3>
-                    <p class="text-sm mb-3">Suscríbete para recibir ofertas especiales y novedades.</p>
-                    <form action="#" method="POST" class="flex">
-                        <input type="email" placeholder="tu@email.com" class="w-full px-3 py-2 rounded-l-lg text-gray-800 focus:outline-none focus:ring-2 focus:ring-indigo-500" required>
-                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-r-lg font-semibold transition duration-300">
-                            <i class="fas fa-envelope"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 pt-8 text-center text-sm">
-                <p>&copy; <span id="currentYear"></span> TuLicenciaDigital. Todos los derechos reservados. Diseñado con <i class="fas fa-heart text-pink-500"></i>.</p>
+    <footer class="footer mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-2">&copy; <span id="currentYear"></span> TuMundoDigital. Todos los derechos reservados.</p>
+            <p class="text-sm mb-4">Tu Aliado Oficial en el Universo Digital.</p>
+            <div class="space-x-4">
+                <a href="nosotros.html" class="hover:text-sky-400 transition-colors">Nosotros</a> |
+                <a href="productos.html" class="hover:text-sky-400 transition-colors">Productos</a> |
+                <a href="beneficios.html" class="hover:text-sky-400 transition-colors">Beneficios</a> |
+                <a href="contacto.html" class="hover:text-sky-400 transition-colors">Contacto</a>
             </div>
         </div>
     </footer>
 
     <script>
-        document.querySelectorAll('a[href*="#"]').forEach(anchor => {
-            if (anchor.pathname === window.location.pathname && anchor.hash) {
-                anchor.addEventListener('click', function (e) {
-                    const targetElement = document.querySelector(this.hash);
-                    if (targetElement) {
-                        e.preventDefault();
-                        targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            }
+        // Script para el menú móvil
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
+
+        // Actualizar año en el footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
+        
+        // Placeholder image error handling
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                img.onerror = function() {
+                    this.src = `https://placehold.co/${this.clientWidth || 800}x${this.clientHeight || 400}/1F2937/9CA3AF?text=Imagen+No+Disponible`;
+                    console.warn(`Failed to load image: ${this.alt}. Replaced with placeholder.`);
+                };
+            });
+        });
     </script>
 
 </body>
