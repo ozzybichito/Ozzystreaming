@@ -39,7 +39,7 @@
         .card-text {
             @apply text-gray-400 text-sm mb-4;
         }
-        .whatsapp-button {
+        .whatsapp-button { /* This is the base style for general WhatsApp buttons */
             @apply inline-block bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-5 rounded-lg text-sm shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-2px];
         }
         .primary-button {
@@ -50,6 +50,22 @@
         }
         .footer {
             @apply bg-gray-950 text-gray-400 py-12; /* Even darker footer */
+        }
+        /* Animation classes from your script, moved here for organization */
+        .animate-fade-in-down {
+            animation: fadeInDown 1s ease-out;
+        }
+        .animate-fade-in-up {
+            animation: fadeInUp 1s ease-out 0.5s;
+            animation-fill-mode: backwards; /* Start hidden */
+        }
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -115,7 +131,7 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Product Card 1: OS License -->
                 <div class="card">
-                    <img src="https://placehold.co/600x400/38BDF8/0F172A?text=Windows+Pro" alt="[Imagen de Licencia de Sistema Operativo]" class="card-img">
+                    <img src="https://placehold.co/600x400/38BDF8/0F172A?text=Windows+Pro" alt="Licencia de Sistema Operativo Windows Pro" class="card-img" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1F2937/9CA3AF?text=Imagen+No+Disponible';">
                     <div class="p-6">
                         <h3 class="card-title">Licencias OS Pro</h3>
                         <p class="card-text">Windows y macOS originales. Activación instantánea, soporte total.</p>
@@ -128,7 +144,7 @@
 
                 <!-- Product Card 2: Streaming Account -->
                 <div class="card">
-                    <img src="https://placehold.co/600x400/A78BFA/0F172A?text=Streaming+Max" alt="[Imagen de Cuenta de Streaming]" class="card-img">
+                    <img src="https://placehold.co/600x400/A78BFA/0F172A?text=Streaming+Max" alt="Cuenta de Streaming Max" class="card-img" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1F2937/9CA3AF?text=Imagen+No+Disponible';">
                     <div class="p-6">
                         <h3 class="card-title">Cuentas Streaming Max</h3>
                         <p class="card-text">Netflix, Disney+, HBO Max y más. Maratones sin límites.</p>
@@ -141,7 +157,7 @@
 
                 <!-- Product Card 3: App License -->
                 <div class="card">
-                    <img src="https://placehold.co/600x400/34D399/0F172A?text=Office+Suite" alt="[Imagen de Licencia de Aplicación]" class="card-img">
+                    <img src="https://placehold.co/600x400/34D399/0F172A?text=Office+Suite" alt="Licencia de Suite de Productividad Office" class="card-img" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1F2937/9CA3AF?text=Imagen+No+Disponible';">
                     <div class="p-6">
                         <h3 class="card-title">Suites de Productividad</h3>
                         <p class="card-text">Office, Adobe y más. Herramientas pro para tus proyectos.</p>
@@ -162,7 +178,7 @@
     <section class="py-16 md:py-24 bg-gray-800">
         <div class="container mx-auto px-6 text-center">
             <h2 class="section-title">Nuestro Mayor <span class="text-purple-400">Beneficio</span>: Tu Tranquilidad</h2>
-            <img src="https://placehold.co/120x120/8B5CF6/FFFFFF?text=Soporte" alt="[Icono de Soporte Técnico]" class="mx-auto mb-6 rounded-full shadow-lg">
+            <img src="https://placehold.co/120x120/8B5CF6/FFFFFF?text=Soporte" alt="Icono de Soporte Técnico Postventa" class="mx-auto mb-6 rounded-full shadow-lg" onerror="this.onerror=null;this.src='https://placehold.co/120x120/1F2937/9CA3AF?text=Icono';">
             <p class="text-lg text-gray-300 mb-8 max-w-3xl mx-auto">
                 No solo te vendemos un producto, ¡te acompañamos! Nuestro soporte postventa es legendario. Resolvemos cualquier duda o problema con tu servicio o plan contratado durante toda su vigencia. Tu satisfacción es nuestra misión.
             </p>
@@ -179,9 +195,14 @@
             <p class="text-lg text-gray-300 mb-10">
                 Chatea con nosotros. Estamos listos para asesorarte y ofrecerte la mejor solución para tu vida digital.
             </p>
-            <a href="https://wa.me/51943129913?text=Hola%20TuMundoDigital,%20quisiera%20hacer%20una%20consulta%20general%20sobre%20sus%20productos." target="_blank" class="whatsapp-button bg-green-500 hover:bg-green-400 text-white font-bold py-4 px-10 rounded-lg text-xl shadow-xl hover:shadow-green-400/50 transition-all duration-300 transform hover:scale-110">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block mr-2" viewBox="0 0 20 20" fill="currentColor"><path d="M16.546 13.297a1.654 1.654 0 00-2.334 0L12.66 14.85a.375.375 0 01-.494-.041c-1.048-.99-2.393-2.34-3.383-3.382a.375.375 0 01-.04-.494l1.553-1.552a1.654 1.654 0 000-2.334L8.744 5.502a1.654 1.654 0 00-2.334 0L5.106 6.806c-.787.787-.948 2.003-.4 3.06 1.112 2.14 3.277 4.305 5.418 5.417 1.057.548 2.273.387 3.06-.4l1.304-1.304a1.654 1.654 0 000-2.334l-1.007-1.006zM10 18a8 8 0 100-16 8 8 0 000 16z" /></svg>
-                Contactar por WhatsApp
+            <!-- MODIFIED WHATSAPP BUTTON BELOW -->
+            <a href="https://wa.me/51943129913?text=Hola%20TuMundoDigital,%20quisiera%20hacer%20una%20consulta%20general%20sobre%20sus%20productos." target="_blank" 
+               class="inline-block bg-green-500 hover:bg-green-400 text-white font-bold 
+                      text-base py-3 px-5 md:text-lg md:py-4 md:px-8 
+                      rounded-lg shadow-xl hover:shadow-green-400/50 
+                      transition-all duration-300 transform hover:scale-105">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 inline-block mr-2 align-middle" viewBox="0 0 20 20" fill="currentColor"><path d="M16.546 13.297a1.654 1.654 0 00-2.334 0L12.66 14.85a.375.375 0 01-.494-.041c-1.048-.99-2.393-2.34-3.383-3.382a.375.375 0 01-.04-.494l1.553-1.552a1.654 1.654 0 000-2.334L8.744 5.502a1.654 1.654 0 00-2.334 0L5.106 6.806c-.787.787-.948 2.003-.4 3.06 1.112 2.14 3.277 4.305 5.418 5.417 1.057.548 2.273.387 3.06-.4l1.304-1.304a1.654 1.654 0 000-2.334l-1.007-1.006zM10 18a8 8 0 100-16 8 8 0 000 16z" /></svg>
+                <span class="align-middle">WhatsApp</span>
             </a>
         </div>
     </section>
@@ -212,37 +233,26 @@
         // Actualizar año en el footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        // Placeholder image error handling
+        // Placeholder image error handling for all images (not just ones created by placehold.co)
         document.addEventListener('DOMContentLoaded', () => {
             const images = document.querySelectorAll('img');
             images.forEach(img => {
+                // Store original src for potential re-check if placeholder also fails, though unlikely with placehold.co
+                const originalSrc = img.src; 
                 img.onerror = function() {
-                    this.src = `https://placehold.co/${this.clientWidth || 600}x${this.clientHeight || 400}/1F2937/9CA3AF?text=Imagen+No+Disponible`; // Dark placeholder
-                    console.warn(`Failed to load image: ${this.alt}. Replaced with placeholder.`);
+                    // Avoid infinite loop if placeholder itself fails, though placehold.co is reliable
+                    if (this.src.startsWith('https://placehold.co/')) {
+                        console.warn(`Placeholder image failed to load or was already a placeholder: ${originalSrc}`);
+                        return; 
+                    }
+                    // Use clientWidth/Height if available, otherwise default to common card image dimensions
+                    const width = this.clientWidth > 0 ? this.clientWidth : (this.classList.contains('card-img') ? 600 : 120);
+                    const height = this.clientHeight > 0 ? this.clientHeight : (this.classList.contains('card-img') ? 400 : 120);
+                    this.src = `https://placehold.co/${width}x${height}/1F2937/9CA3AF?text=Imagen+No+Disponible`;
+                    console.warn(`Failed to load image: ${originalSrc}. Replaced with placeholder.`);
                 };
             });
         });
-
-        // Simple animations on scroll (optional, requires more setup for Intersection Observer for performance)
-        // For now, using CSS animations for hero text as an example.
-        // Add these classes to your CSS if you want to use them:
-        /*
-        .animate-fade-in-down {
-            animation: fadeInDown 1s ease-out;
-        }
-        .animate-fade-in-up {
-            animation: fadeInUp 1s ease-out 0.5s;
-            animation-fill-mode: backwards; /* Start hidden */
-        }
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        */
     </script>
 </body>
 </html>
