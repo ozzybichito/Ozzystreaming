@@ -3,174 +3,228 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BLUE DENTAL - Contacto - Agenda tu Cita</title>
+    <title>Contacto - TuMundoDigital</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Poppins', sans-serif; }
-        .icon-placeholder { display: inline-flex; align-items: center; justify-content: center; width: 50px; height: 50px; border-radius: 50%; background-color: #DBEAFE; color: #1D4ED8; font-weight: bold; font-size: 1.5rem; margin-bottom: 0.75rem; }
-        @keyframes fadeInDown { 0% { opacity: 0; transform: translateY(-20px); } 100% { opacity: 1; transform: translateY(0); } }
-        .animate-fade-in-down { animation: fadeInDown 0.8s ease-out forwards; }
-        @keyframes fadeInUp { 0% { opacity: 0; transform: translateY(20px); } 100% { opacity: 1; transform: translateY(0); } }
-        .animate-fade-in-up { animation: fadeInUp 0.8s ease-out 0.3s forwards; opacity:0; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* bg-gray-900 */
+            color: #E5E7EB; /* text-gray-200 */
+        }
+        .nav-link {
+            @apply px-3 py-2 rounded-md text-sm font-medium transition-colors duration-300;
+        }
+        .nav-link-active {
+            @apply bg-sky-500 text-white;
+        }
+        .nav-link-hover {
+            @apply hover:bg-sky-700 hover:text-white;
+        }
+        .nav-link-mobile {
+            @apply block px-4 py-3 text-sm text-gray-200 hover:bg-sky-600 transition-colors;
+        }
+        .page-header-bg {
+            background: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.8)), url('https://placehold.co/1920x600/1E293B/9CA3AF?text=Contacto') center center/cover no-repeat;
+        }
+        .footer {
+            @apply bg-gray-950 text-gray-400 py-12; /* Even darker footer */
+        }
+        .breadcrumb-link {
+            @apply text-sm text-gray-400 hover:text-sky-400 transition-colors;
+        }
+        .section-title {
+            @apply text-3xl md:text-4xl font-bold mb-8 text-sky-400;
+        }
+        .form-input {
+            @apply w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 text-gray-200 focus:outline-none focus:ring-2 focus:ring-sky-500 focus:border-transparent transition-colors;
+        }
+        .form-label {
+            @apply block text-sm font-medium text-gray-300 mb-1;
+        }
+        .primary-button {
+            @apply bg-sky-500 hover:bg-sky-600 text-white font-bold py-3 px-8 rounded-lg text-lg shadow-md hover:shadow-sky-500/40 transition-all duration-300 transform hover:scale-105;
+        }
+        .whatsapp-button {
+            @apply inline-flex items-center justify-center bg-green-500 hover:bg-green-400 text-white font-bold py-3 px-6 rounded-lg text-base shadow-md hover:shadow-lg transition-all duration-300 transform hover:translate-y-[-2px];
+        }
+        .icon-contact {
+            @apply w-8 h-8 text-purple-400 mr-3;
+        }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+<body class="antialiased">
 
-    <header class="bg-white shadow-md sticky top-0 z-50">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="index.html" class="text-3xl font-bold text-blue-700">BLUE DENTAL</a>
-            <div class="hidden md:flex space-x-4 items-center">
-                <a href="index.html" class="text-gray-600 hover:text-blue-600">Inicio</a>
-                <a href="nosotros.html" class="text-gray-600 hover:text-blue-600">Nosotros</a>
-                <a href="servicios.html" class="text-gray-600 hover:text-blue-600">Servicios</a>
-                <a href="beneficios.html" class="text-gray-600 hover:text-blue-600">Beneficios</a>
-                <a href="contacto.html" class="text-blue-600 font-semibold border-b-2 border-blue-600">Contacto</a> <a href="tel:921926732" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg transition duration-300 text-sm">Llamar Ahora</a>
-            </div>
-            <div class="md:hidden">
-                <button id="mobileMenuButton" class="text-gray-600 hover:text-blue-600 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
-            </div>
-        </nav>
-        <div id="mobileMenu" class="md:hidden hidden bg-white shadow-lg">
-            <a href="index.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Inicio</a>
-            <a href="nosotros.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Nosotros</a>
-            <a href="servicios.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Servicios</a>
-            <a href="beneficios.html" class="block px-6 py-3 text-gray-600 hover:bg-gray-100">Beneficios</a>
-            <a href="contacto.html" class="block px-6 py-3 text-blue-600 font-semibold hover:bg-gray-100">Contacto</a> <a href="tel:921926732" class="block px-6 py-3 bg-blue-600 text-white text-center font-semibold rounded-b-lg hover:bg-blue-700 transition duration-300">Llamar Ahora</a>
+    <!-- Header -->
+    <header class="bg-gray-900/80 backdrop-blur-md shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-bold text-sky-400">TuMundo<span class="text-purple-400">Digital</span></a>
+            <nav class="hidden md:flex space-x-2">
+                <a href="index.html" class="nav-link nav-link-hover">Inicio</a>
+                <a href="productos.html" class="nav-link nav-link-hover">Productos</a>
+                <a href="beneficios.html" class="nav-link nav-link-hover">Beneficios</a>
+                <a href="nosotros.html" class="nav-link nav-link-hover">Nosotros</a>
+                <a href="contacto.html" class="nav-link nav-link-active">Contacto</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-gray-200 focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-gray-800/95 backdrop-blur-md">
+            <a href="index.html" class="nav-link-mobile border-t border-gray-700">Inicio</a>
+            <a href="productos.html" class="nav-link-mobile border-t border-gray-700">Productos</a>
+            <a href="beneficios.html" class="nav-link-mobile border-t border-gray-700">Beneficios</a>
+            <a href="nosotros.html" class="nav-link-mobile border-t border-gray-700">Nosotros</a>
+            <a href="contacto.html" class="nav-link-mobile border-t border-b border-gray-700 bg-sky-600 text-white">Contacto</a>
         </div>
     </header>
 
-    <main class="flex-grow">
-        <section class="py-16 md:py-24 bg-blue-50">
-            <div class="container mx-auto px-6 text-center">
-                <h1 class="text-4xl md:text-5xl font-bold text-blue-800 mb-4 animate-fade-in-down">Ponte en Contacto</h1>
-                <p class="text-lg md:text-xl text-gray-700 max-w-2xl mx-auto animate-fade-in-up">Estamos listos para atenderte y resolver todas tus dudas. ¡Agenda tu cita hoy!</p>
-            </div>
-        </section>
+    <!-- Page Header -->
+    <section class="page-header-bg py-20 md:py-28">
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Ponte en Contacto</h1>
+            <p class="text-lg text-gray-300">Estamos aquí para ayudarte. ¡Hablemos!</p>
+        </div>
+    </section>
 
-        <section class="py-12 md:py-16">
-            <div class="container mx-auto px-6">
-                <div class="grid md:grid-cols-2 gap-12 items-start">
-                    <div class="bg-white p-8 rounded-xl shadow-lg animate-fade-in-up" style="animation-delay: 0.1s;">
-                        <h2 class="text-2xl font-semibold text-blue-700 mb-6">Envíanos un Mensaje</h2>
-                        <form action="#" method="POST"> <div class="mb-4">
-                                <label for="name" class="block text-gray-700 font-medium mb-1">Nombre Completo</label>
-                                <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
-                            </div>
-                            <div class="mb-4">
-                                <label for="email" class="block text-gray-700 font-medium mb-1">Correo Electrónico</label>
-                                <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
-                            </div>
-                            <div class="mb-4">
-                                <label for="phone" class="block text-gray-700 font-medium mb-1">Teléfono (Opcional)</label>
-                                <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500">
-                            </div>
-                            <div class="mb-4">
-                                <label for="subject" class="block text-gray-700 font-medium mb-1">Asunto</label>
-                                <input type="text" id="subject" name="subject" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
-                            </div>
-                            <div class="mb-6">
-                                <label for="message" class="block text-gray-700 font-medium mb-1">Mensaje</label>
-                                <textarea id="message" name="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required></textarea>
-                            </div>
-                            <div>
-                                <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
-                                    Enviar Mensaje
-                                </button>
-                            </div>
-                        </form>
-                    </div>
+    <!-- Breadcrumbs -->
+    <div class="container mx-auto px-6 py-6">
+        <nav aria-label="Breadcrumb">
+            <ol class="flex items-center space-x-2">
+                <li><a href="index.html" class="breadcrumb-link">Inicio</a></li>
+                <li><span class="text-gray-500">/</span></li>
+                <li><span class="text-gray-200 font-medium">Contacto</span></li>
+            </ol>
+        </nav>
+    </div>
 
-                    <div class="animate-fade-in-up" style="animation-delay: 0.3s;">
-                        <div class="bg-white p-8 rounded-xl shadow-lg mb-8">
-                            <h2 class="text-2xl font-semibold text-blue-700 mb-6">Nuestra Ubicación y Datos</h2>
-                            <div class="space-y-3 text-gray-700">
-                                <p class="flex items-start">
-                                    <span class="icon-placeholder mr-3 text-xl w-8 h-8 flex-shrink-0">📍</span>
-                                    <span>Mz Q Lote 5, Urbanización Las Palmeras, <br>Chilca, Cañete, Lima, Perú</span>
-                                </p>
-                                <p class="flex items-center">
-                                    <span class="icon-placeholder mr-3 text-xl w-8 h-8 flex-shrink-0">📞</span>
-                                    <a href="tel:921926732" class="hover:text-blue-600">921 926 732</a>
-                                </p>
-                                <p class="flex items-center">
-                                    <span class="icon-placeholder mr-3 text-xl w-8 h-8 flex-shrink-0">📱</span>
-                                    <a href="tel:990304059" class="hover:text-blue-600">990 304 059 (WhatsApp disponible)</a>
-                                </p>
-                                <p class="flex items-center">
-                                    <span class="icon-placeholder mr-3 text-xl w-8 h-8 flex-shrink-0">✉️</span>
-                                    <a href="mailto:info@bluedental.pe" class="hover:text-blue-600">info@bluedental.pe</a> (ejemplo)
-                                </p>
-                                <p class="flex items-start">
-                                    <span class="icon-placeholder mr-3 text-xl w-8 h-8 flex-shrink-0">🕒</span>
-                                    <span>
-                                        <strong>Horario de Atención:</strong><br>
-                                        Lunes a Viernes: 9:00 AM - 7:00 PM<br>
-                                        Sábados: 9:00 AM - 1:00 PM
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-                        
+    <!-- Contact Section -->
+    <main class="container mx-auto px-6 py-8 md:py-16">
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+            
+            <!-- Contact Info -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-xl">
+                <h2 class="section-title text-left mb-6">Información de Contacto</h2>
+                <p class="text-gray-300 mb-6">
+                    No dudes en contactarnos para cualquier consulta sobre nuestros productos, soporte técnico o si estás interesado en colaborar con nosotros.
+                </p>
+                <div class="space-y-6">
+                    <div class="flex items-center">
+                        <svg class="icon-contact" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" /><path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" /></svg>
                         <div>
-                             <h3 class="text-xl font-semibold text-blue-700 mb-3">Encuéntranos en el Mapa</h3>
-                             <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3893.009539728194!2d-76.74169802401704!3d-12.51600092788748!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x910fcff5a73e7f97%3A0x233474c024682f89!2sBLUE%20DENTAL!5e0!3m2!1ses-419!2spe!4v1717475344734!5m2!1ses-419!2spe" 
-                                width="100%" 
-                                height="350" 
-                                style="border:0;" 
-                                allowfullscreen="" 
-                                loading="lazy" 
-                                referrerpolicy="no-referrer-when-downgrade"
-                                class="rounded-lg shadow-xl">
-                            </iframe>
+                            <h3 class="font-semibold text-lg text-sky-400">Email</h3>
+                            <a href="mailto:soporte@tumundodigital.com" class="text-gray-300 hover:text-sky-300 transition-colors">soporte@tumundodigital.com</a>
+                            <p class="text-xs text-gray-500">(Próximamente, por ahora usa WhatsApp)</p>
                         </div>
                     </div>
+                    <div class="flex items-center">
+                         <svg class="icon-contact" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M1.5 4.5a3 3 0 0 1 3-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 0 1-.694 1.955l-1.293.97c-.135.101-.164.279-.086.43l.086.155a7.5 7.5 0 0 0 5.272 5.272l.155.086c.151.078.329.049.43-.086l.97-1.293a1.875 1.875 0 0 1 1.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 0 1-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5Z" clip-rule="evenodd" /></svg>
+                        <div>
+                            <h3 class="font-semibold text-lg text-sky-400">WhatsApp Directo</h3>
+                            <a href="https://wa.me/51943129913?text=Hola%20TuMundoDigital,%20tengo%20una%20consulta." target="_blank" class="text-gray-300 hover:text-sky-300 transition-colors">+51 943 129 913</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center">
+                        <svg class="icon-contact" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path fill-rule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 0 0 .723 0l.028-.015.071-.041a16.975 16.975 0 0 0 5.159-4.505c1.588-2.055 1.988-4.728 1.988-7.217C21 4.015 17.24 1 12.5 1S4 4.015 4 9.25c0 2.489.399 5.162 1.988 7.217 1.588 2.055 3.27 3.836 5.159 4.505ZM12.5 12a2.75 2.75 0 1 0 0-5.5 2.75 2.75 0 0 0 0 5.5Z" clip-rule="evenodd" /></svg>
+                        <div>
+                            <h3 class="font-semibold text-lg text-sky-400">Ubicación (Referencial)</h3>
+                            <p class="text-gray-300">Lima, Perú (Servicio 100% Digital)</p>
+                        </div>
+                    </div>
+                     <a href="https://wa.me/51943129913?text=Hola%20TuMundoDigital,%20quisiera%20hacer%20una%20consulta%20general." target="_blank" class="whatsapp-button mt-6 w-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10c0 3.866-3.582 7-8 7a8.838 8.838 0 01-4.418-1.223L2.393 18.5l1.42-3.387A6.969 6.969 0 012 10c0-3.866 3.582-7 8-7s8 3.134 8 7zM7.897 8.008a.363.363 0 00-.525.016L6.008 9.576a.364.364 0 00-.016.525C6.37 10.794 7.195 12 8.984 12h.016c1.79 0 2.616-1.206 2.992-1.892a.364.364 0 00-.016-.525l-1.364-1.552a.364.364 0 00-.525-.016l-.784.673c-.06.052-.138.027-.175-.043a2.924 2.924 0 01-1.233-1.525c-.037-.07-.012-.148.042-.202l.785-.673z" clip-rule="evenodd" /></svg>
+                        Enviar Mensaje por WhatsApp
+                    </a>
                 </div>
+            </div>
+
+            <!-- Contact Form (Placeholder) -->
+            <div class="bg-gray-800 p-8 rounded-xl shadow-xl">
+                <h2 class="section-title text-left mb-6">Envíanos un Mensaje</h2>
+                <form action="#" method="POST"> <!-- El action puede ser un script de backend o mailto -->
+                    <div class="space-y-5">
+                        <div>
+                            <label for="name" class="form-label">Nombre Completo</label>
+                            <input type="text" name="name" id="name" autocomplete="name" class="form-input" placeholder="Tu Nombre Completo">
+                        </div>
+                        <div>
+                            <label for="email" class="form-label">Correo Electrónico</label>
+                            <input type="email" name="email" id="email" autocomplete="email" class="form-input" placeholder="tu@ejemplo.com">
+                        </div>
+                        <div>
+                            <label for="subject" class="form-label">Asunto</label>
+                            <input type="text" name="subject" id="subject" class="form-input" placeholder="Ej: Consulta sobre Windows 11">
+                        </div>
+                        <div>
+                            <label for="message" class="form-label">Mensaje</label>
+                            <textarea id="message" name="message" rows="4" class="form-input" placeholder="Escribe tu mensaje aquí..."></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="primary-button w-full">
+                                Enviar Mensaje
+                            </button>
+                            <p class="text-xs text-gray-500 mt-2 text-center">O contáctanos directamente por WhatsApp para una respuesta más rápida.</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Distributor/Partner Section -->
+        <section class="mt-16 md:mt-24 py-12 md:py-16 bg-gray-800 rounded-xl shadow-xl px-6 md:px-10">
+            <div class="text-center">
+                <h2 class="text-3xl font-bold text-purple-400 mb-6">¿Interesado en ser Distribuidor?</h2>
+                <p class="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+                    En TuMundoDigital, siempre estamos buscando expandir nuestra red de colaboradores. Si te apasiona la tecnología y quieres ofrecer productos digitales de calidad con excelente respaldo, ¡queremos conocerte!
+                </p>
+                <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+                    Ofrecemos precios especiales para distribuidores, material de apoyo y la oportunidad de crecer junto a una marca en expansión.
+                </p>
+                <a href="https://wa.me/51943129913?text=Hola%20TuMundoDigital,%20estoy%20interesado%20en%20conocer%20m%C3%A1s%20sobre%20su%20programa%20de%20distribuidores." target="_blank" class="whatsapp-button text-lg py-3 px-8">
+                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 mr-2"><path d="M12.75 15a.75.75 0 0 0 0-1.5H12A.75.75 0 0 0 12 15h.75Z" /><path fill-rule="evenodd" d="M3 6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6Zm14.25 6a.75.75 0 0 1-.75.75H12v4.5a.75.75 0 0 1-1.5 0V12H6.75a.75.75 0 0 1 0-1.5H10.5V6A.75.75 0 0 1 11.25 6v4.5h3.75a.75.75 0 0 1 .75.75Z" clip-rule="evenodd" /></svg>
+                    Quiero ser Distribuidor
+                </a>
             </div>
         </section>
     </main>
 
-    <footer class="bg-gray-800 text-gray-300 py-10 text-sm">
-        <div class="container mx-auto px-6">
-            <div class="grid md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <h4 class="font-bold text-white text-lg mb-3">BLUE DENTAL</h4>
-                    <p>Comprometidos con tu salud y bienestar dental. Ofrecemos una atención integral y personalizada para toda la familia.</p>
-                </div>
-                <div>
-                    <h4 class="font-bold text-white text-lg mb-3">Enlaces Rápidos</h4>
-                    <ul>
-                        <li class="mb-1"><a href="index.html" class="hover:text-blue-400">Inicio</a></li>
-                        <li class="mb-1"><a href="nosotros.html" class="hover:text-blue-400">Nosotros</a></li>
-                        <li class="mb-1"><a href="servicios.html" class="hover:text-blue-400">Servicios</a></li>
-                        <li class="mb-1"><a href="beneficios.html" class="hover:text-blue-400">Beneficios</a></li>
-                        <li class="mb-1"><a href="contacto.html" class="hover:text-blue-400">Contacto</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-bold text-white text-lg mb-3">Contacto</h4>
-                    <p class="mb-1">📍 Mz Q Lote 5, Chilca, Lima, Perú</p>
-                    <p class="mb-1">📞 <a href="tel:921926732" class="hover:text-blue-400">921 926 732</a></p>
-                    <p class="mb-1">📞 <a href="tel:990304059" class="hover:text-blue-400">990 304 059</a></p>
-                    <p class="mb-1">✉️ <a href="mailto:info@bluedental.pe" class="hover:text-blue-400">info@bluedental.pe</a> (ejemplo)</p>
-                </div>
-            </div>
-            <div class="border-t border-gray-700 pt-6 text-center">
-                <p>&copy; <span id="currentYear"></span> BLUE DENTAL. Todos los derechos reservados.</p>
-                <p class="mt-1">Diseñado con ❤️ para tu sonrisa.</p>
+    <!-- Footer -->
+    <footer class="footer mt-16">
+        <div class="container mx-auto px-6 text-center">
+            <p class="mb-2">&copy; <span id="currentYear"></span> TuMundoDigital. Todos los derechos reservados.</p>
+            <p class="text-sm mb-4">Tu Aliado Oficial en el Universo Digital.</p>
+            <div class="space-x-4">
+                <a href="nosotros.html" class="hover:text-sky-400 transition-colors">Nosotros</a> |
+                <a href="productos.html" class="hover:text-sky-400 transition-colors">Productos</a> |
+                <a href="beneficios.html" class="hover:text-sky-400 transition-colors">Beneficios</a> |
+                <a href="contacto.html" class="hover:text-sky-400 transition-colors">Contacto</a>
             </div>
         </div>
     </footer>
 
     <script>
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-        const mobileMenuButton = document.getElementById('mobileMenuButton');
-        const mobileMenu = document.getElementById('mobileMenu');
+        // Script para el menú móvil
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+        });
+
+        // Actualizar año en el footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Placeholder image error handling (though not many images on this page)
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('img'); // If you add images later
+            images.forEach(img => {
+                img.onerror = function() {
+                    this.src = `https://placehold.co/${this.clientWidth || 600}x${this.clientHeight || 400}/1F2937/9CA3AF?text=Imagen+No+Disponible`;
+                    console.warn(`Failed to load image: ${this.alt}. Replaced with placeholder.`);
+                };
+            });
         });
     </script>
 
